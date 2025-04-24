@@ -2,14 +2,16 @@
 import React from 'react';
 import Header from './components/Header';
 import About from './components/About';
+import PersonalIntroduction from './components/PersonalIntroduction';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 
 const App: React.FC = () => {
   return (
-    <div className="min-h-screen min-w-screen bg-gray-50">
+    <div className="min-h-screen min-w-screen bg-white">
       <Header />
-      <main className="container mx-auto p-4">
+      <main className="container min-h-screen min-w-screen">
+        <PersonalIntroduction />
         <About />
         <Projects />
         <Contact />
