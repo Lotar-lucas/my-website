@@ -1,12 +1,22 @@
 import React from 'react';
 
+type Contacts = {
+  email: string;
+  linkedIn: string;
+  github: string;
+  instagram: string;
+}
+
+const contacts: Contacts = {
+  email: import.meta.env.VITE_EMAIL,
+  linkedIn: import.meta.env.VITE_LINKEDIN,
+  github: import.meta.env.VITE_GITHUB,
+  instagram: import.meta.env.VITE_INSTAGRAM,
+}
 const Contact: React.FC = () => {
   return (
-    <section id="contato" className="my-8">
-      <h2 className="text-3xl font-semibold mb-4">Contato</h2>
-      <p className="text-gray-700">
-        Entre em contato pelo email: <a href="mailto:seuemail@exemplo.com" className="text-blue-600 hover:underline">seuemail@exemplo.com</a>
-      </p>
+    <section>
+      teste
     </section>
   );
 };

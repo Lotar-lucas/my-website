@@ -4,6 +4,7 @@ import Header from './components/Header';
 import About from './components/About';
 import PersonalIntroduction from './components/PersonalIntroduction';
 import Projects from './components/Projects';
+import TechnicalSkillsAndDegree from './components/TechnicalSkillsAndDegree';
 import Contact from './components/Contact';
 
 const App: React.FC = () => {
@@ -14,6 +15,7 @@ const App: React.FC = () => {
         <PersonalIntroduction />
         <About />
         <Projects />
+        <TechnicalSkillsAndDegree />
         <Contact />
       </main>
     </div>
