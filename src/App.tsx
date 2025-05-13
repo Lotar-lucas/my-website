@@ -9,9 +9,9 @@ import Contact from './components/Contact';
 
 const App: React.FC = () => {
   return (
-    <div className="min-h-screen min-w-screen bg-white">
+    <div className="min-h-screen w-full bg-white">
       <Header />
-      <main className="container min-h-screen min-w-screen">
+      <main className="min-h-screen w-full mx-auto">
         <PersonalIntroduction />
         <About />
         <Projects />

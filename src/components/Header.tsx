@@ -2,10 +2,10 @@ import React from 'react';
 
 const Header: React.FC = () => {
   return (
-    <header className="bg-white p-4">
+    <header className="bg-slate-100 p-4">
       <div className="container mx-auto flex justify-between items-center">
         <h1 className="text-2xl font-bold text-blue-800">Lucas Lotar</h1>
-        
+
         <nav>
           <ul className="flex space-x-4">
             <li><a href="#sobre" className="hover:text-gray-300">Sobre</a></li>
