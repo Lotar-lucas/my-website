@@ -1,5 +1,5 @@
 import React from 'react';
-import projectImage1 from '../assets/teste.jpeg';
+import projectImage1 from '../../assets/teste.jpeg';
 
 
 interface Project {
@@ -35,7 +35,7 @@ const Projects: React.FC = () => {
     <section id="projetos" className="flex flex-col items-center my-8">
       <h1 className="text-3xl font-semibold mb-4 text-blue-800">Projetos</h1>
 
-      <div className="grid gap-6 md:grid-cols-3 w-full max-w-screen-lg justify-center">
+      <div className="grid gap-6 md:grid-cols-3 w-full px-4 justify-center">
         { projects.map((project, index) => (
 
           <div key={index}

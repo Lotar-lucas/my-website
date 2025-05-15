@@ -1,6 +1,14 @@
 @import "tailwindcss";
 
 
+/* .teste-css {
+  background-color: red;
+  color: white;
+  padding: 10px;
+  border: 2px solid black;
+} */
+
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -27,10 +35,11 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
+  /* display: flex; */
+  /* place-items: center; */
   min-width: 320px;
   min-height: 100vh;
+  display: block
 }
 
 h1 {
