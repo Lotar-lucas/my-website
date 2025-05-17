@@ -1,17 +1,22 @@
 
 import React from 'react';
-import Header from './components/Header';
-import About from './components/About';
-import Projects from './components/Projects';
-import Contact from './components/Contact';
+import Header from './components/header/Header';
+
+import About from './components/about/About';
+import PersonalIntroduction from './components/personalIntroduction/PersonalIntroduction';
+import Projects from './components/projects/Projects';
+import TechnicalSkillsAndDegree from './components/technicalSkillsAndDegree/TechnicalSkillsAndDegree';
+import Contact from './components/contact/Contact';
 
 const App: React.FC = () => {
   return (
-    <div className="min-h-screen min-w-screen bg-gray-50">
+    <div className="bg-white">
       <Header />
-      <main className="container mx-auto p-4">
+      <main className="">
+        <PersonalIntroduction />
         <About />
         <Projects />
+        <TechnicalSkillsAndDegree />
         <Contact />
       </main>
     </div>
