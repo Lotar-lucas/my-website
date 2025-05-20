@@ -10,7 +10,7 @@ import Contact from './components/contact/Contact';
 
 const App: React.FC = () => {
   return (
-    <div className="bg-white">
+    <div className="bg-white scroll-smooth">
       <Header />
       <main className="">
         <PersonalIntroduction />
