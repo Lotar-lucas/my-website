@@ -32,7 +32,7 @@ const projects: Project[] = [
 
 const Projects: React.FC = () => {
   return (
-    <section id="projetos" className="flex flex-col items-center my-8">
+    <section id="projetos" className="flex flex-col items-center px-6 py-24">
       <h1 className="text-3xl font-semibold mb-4 text-blue-800">Projetos</h1>
 
       <div className="grid gap-6 md:grid-cols-3 w-full px-4 justify-center">
