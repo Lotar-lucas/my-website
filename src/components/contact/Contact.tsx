@@ -17,7 +17,7 @@ const contacts: Contacts = {
 }
 const Contact: React.FC = () => {
   return (
-    <section id="contato" className="bg-blue-950 p-8">
+    <section id="contato" className="bg-gradient-to-t from-blue-950 to-blue-900 p-8">
       <div className='flex justify-between items-center mx-auto max-w-sm'>
         <div>
           <a href={`mailto:${contacts.email}`} target='_blank'>
