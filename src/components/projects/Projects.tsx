@@ -59,7 +59,7 @@ const statusColorMap = {
 
 const Projects: React.FC = () => {
   return (
-    <section id="projetos" className="bg-white py-24 px-4">
+    <section id="projetos" className="bg-blue-200 py-24 px-4">
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-4xl font-bold text-blue-800 mb-4">Projetos</h2>
 
