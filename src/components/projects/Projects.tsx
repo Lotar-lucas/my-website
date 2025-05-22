@@ -52,11 +52,11 @@ const statusColorMap = {
 
 const Projects: React.FC = () => {
   return (
-    <section id="projetos" className="bg-blue-200 py-24 px-4">
+    <section id="projetos" className="bg-gradient-to-r from-blue-950 to-blue-500 py-24 px-4">
       <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-4xl font-bold text-blue-800 mb-4">Projetos</h2>
+        <h2 className="text-4xl font-bold text-blue-300 mb-4">Projetos</h2>
 
-        <p className="text-lg text-gray-600 mb-12">
+        <p className="text-lg text-blue-100 mb-12">
           Alguns dos projetos que desenvolvi aplicando boas práticas e tecnologias modernas.
         </p>
 
@@ -84,13 +84,13 @@ const Projects: React.FC = () => {
                   {project.title}
                 </h3>
 
-                <p className="text-gray-700">{project.description}</p>
+                <p className="text-blue-800">{project.description}</p>
 
                 <div className="flex flex-wrap gap-2 mt-2">
                   {project.techs.map((tech, i) => (
                     <div
                       key={i}
-                      className="flex items-center gap-1 text-xs text-gray-700 bg-gray-100
+                      className="flex items-center gap-1 text-xs text-blue-800 bg-gray-100
                          px-2 py-1 rounded-full hover:bg-gray-200 hover:scale-[1.03] transition-all duration-150"
                     >
                       {techIcons[tech] || null}
@@ -106,8 +106,8 @@ const Projects: React.FC = () => {
                       href={project.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="mt-4 inline-block text-sm font-medium text-blue-600 hover:text-blue-800 
-                          transition-colors"
+                      className="mt-4 inline-block text-sm font-medium text-blue-800 hover:text-blue-800
+                          transition-colors "
                     >
                       Ver Projeto →
                     </a>
