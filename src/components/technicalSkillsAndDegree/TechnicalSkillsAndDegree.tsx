@@ -123,7 +123,7 @@ const SkillCard = ({ icon, title, skills }: { icon: JSX.Element; title: string; 
     initial={{ opacity: 0, y: 10 }}
     animate={{ opacity: 1, y: 0 }}
     exit={{ opacity: 0, y: -10 }}
-    transition={{ duration: 0.3 }}
+    transition={{ duration: 0.8 }}
     className="bg-white rounded-xl shadow-md p-6 flex flex-col gap-3 hover:shadow-lg transition-shadow min-h-[240px]"
   >
     <div className="flex items-center gap-2">
@@ -149,9 +149,9 @@ const TechnicalSkillsAndDegree: React.FC = () => {
     : skillCategories.filter((cat) => cat.id === activeCategory);
 
   return (
-    <section id="habilidades" className="bg-blue-950 py-24 px-4 sm:px-6">
+    <section id="habilidades" className="bg-blue-200 pt-24 pb-4 px-4 sm:px-6">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl font-bold text-blue-200 mb-6 text-center">Habilidades Técnicas</h2>
+        <h2 className="text-3xl font-bold text-blue-900 mb-6 text-center">Habilidades Técnicas</h2>
 
         <div className="flex flex-wrap justify-center gap-4 mb-10">
           {['Todos', ...skillCategories.map((cat) => cat.id)].map((cat) => (
@@ -172,7 +172,7 @@ const TechnicalSkillsAndDegree: React.FC = () => {
         </div>
 
         <AnimatePresence mode="wait">
-          <motion.div layout className="min-h-[320px] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-24">
+          <motion.div layout className="min-h-[320px] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-4">
             {filteredCategories.map((cat) => (
               <SkillCard key={cat.id} icon={cat.icon} title={cat.id} skills={cat.skills} />
             ))}
@@ -188,7 +188,8 @@ const TechnicalSkillsAndDegree: React.FC = () => {
               href={degree.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-white rounded-xl shadow-md p-5 flex flex-col sm:flex-row items-start sm:items-center gap-4 hover:shadow-lg hover:scale-[1.01] transition-all duration-200 group"
+              className="bg-white rounded-xl shadow-md p-5 flex flex-col sm:flex-row items-start sm:items-center
+                gap-4 hover:shadow-lg hover:scale-[1.01] transition-all duration-200 group"
             >
               <FaGraduationCap className="text-blue-600 text-xl" />
               <div>

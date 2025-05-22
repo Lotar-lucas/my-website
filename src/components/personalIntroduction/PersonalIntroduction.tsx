@@ -4,10 +4,10 @@ import './PersonalIntroduction.css';
 const PersonalIntroduction: React.FC = () => {
   return (
     <section id="sobre" className="min-h-screen flex flex-col justify-center items-start bg-gradient-to-r
-        from-blue-900 to-blue-500"
+     from-blue-950 to-blue-500"
      >
       <div className='max-w-6xl mx-auto px-6 '>
-        <h1 className="text-5xl sm:text-6xl font-bold text-blue-300 leading-tight text-shadow pb-4 pl-6 ">
+        <h1 className="text-6xl sm:text-6xl font-semibold text-white leading-tight text-shadow pb-4 pl-6 ">
           Criando soluções resilientes pensadas para durar
         </h1>
 
@@ -15,10 +15,14 @@ const PersonalIntroduction: React.FC = () => {
           +3 anos projetando e implementando sistemas escaláveis e confiáveis.
         </p>
 
-        <a href="#projetos" className="mt-4 ml-8 inline-block bg-blue-500 hover:bg-blue-700 text-white
-            font-semibold text-base sm:text-lg py-2 px-6 rounded shadow transition-colors duration-200">
-          Ver Projetos
+        <a href="#projetos">
+          <button  className="bg-blue-500 text-white px-4 py-2 mt-4 ml-8
+          rounded hover:bg-white hover:text-blue-500 hover:border hover:border-blue-500
+          transition-all duration-50">
+              Ver Projetos
+          </button>
         </a>
+
 
       </div>
     </section>
