@@ -11,39 +11,110 @@ import {
   FaDocker,
   FaGitAlt,
   FaAws,
-  FaJs
+  FaJs,
+  FaVuejs,
+  FaJava
 } from 'react-icons/fa';
+
 import {
   SiTypescript,
   SiTailwindcss,
-  SiVite,
   SiExpress,
   SiPostgresql,
   SiMongodb,
   SiGithubactions,
-  SiVitest,
   SiJest,
   SiJsonwebtokens,
-  SiTypeorm
+  SiVuetify,
+  SiPrisma,
+  SiNestjs,
+  SiRedux,
+  SiAwslambda,
+  SiAmazonsqs,
+  SiTestinglibrary
 } from 'react-icons/si';
+
+import { TbSql } from "react-icons/tb";
+
+import { DiScrum, DiMysql  } from "react-icons/di";
+
 import { motion, AnimatePresence } from 'framer-motion';
 
 const iconMap: Record<string, JSX.Element> = {
-  'React': <FaReact className="text-sky-500" />, 'TypeScript': <SiTypescript className="text-blue-600" />, 'JavaScript': <FaJs className="text-yellow-400" />, 'Tailwind CSS': <SiTailwindcss className="text-cyan-500" />, 'Vite': <SiVite className="text-purple-500" />, 'Node.js': <FaNodeJs className="text-green-600" />, 'Express': <SiExpress className="text-gray-700" />, 'JWT': <SiJsonwebtokens className="text-amber-500" />, 'TypeORM': <SiTypeorm className="text-red-600" />, 'PostgreSQL': <SiPostgresql className="text-blue-800" />, 'MongoDB': <SiMongodb className="text-green-700" />, 'Docker': <FaDocker className="text-blue-400" />, 'Git': <FaGitAlt className="text-orange-600" />, 'GitHub Actions': <SiGithubactions className="text-gray-800" />, 'CI/CD': <FaTools className="text-gray-700" />, 'AWS S3': <FaAws className="text-orange-500" />, 'Jest': <SiJest className="text-pink-600" />, 'Supertest': <FaVial className="text-teal-600" />, 'Vitest': <SiVitest className="text-green-400" />
+  'React': <FaReact className="text-sky-500 text-lg" />,
+  'Vue.js': <FaVuejs className="text-green-600 text-lg" />,
+  'TypeScript': <SiTypescript className="text-blue-600 text-lg" />,
+  'JavaScript': <FaJs className="text-yellow-400 text-lg" />,
+  'Tailwind CSS': <SiTailwindcss className="text-cyan-500 text-lg" />,
+  'Node.js': <FaNodeJs className="text-green-600 text-lg" />,
+  'Express': <SiExpress className="text-gray-700 text-lg" />,
+  'JWT': <SiJsonwebtokens className="text-amber-500 text-lg" />,
+  'PostgreSQL': <SiPostgresql className="text-blue-800 text-lg" />,
+  'MongoDB': <SiMongodb className="text-green-700 text-lg" />,
+  'Docker': <FaDocker className="text-blue-400 text-lg" />,
+  'Git': <FaGitAlt className="text-orange-600 text-lg" />,
+  'GitHub Actions': <SiGithubactions className="text-gray-800 text-lg" />,
+  'CI/CD': <FaTools className="text-gray-700 text-lg" />,
+  'AWS S3': <FaAws className="text-orange-500 text-lg" />,
+  'AWS SQS': <SiAmazonsqs className="text-orange-500 text-lg" />,
+  'AWS lambda': <SiAwslambda className="text-orange-500 text-lg" />,
+  'Jest': <SiJest className="text-pink-600 text-lg" />,
+  'Testing Library': <SiTestinglibrary className="text-pink-600 text-lg" />,
+  'Supertest': <FaVial className="text-teal-600 text-lg" />,
+  'Vuetify': <SiVuetify className="text-purple-600 text-lg" />,
+  'Prisma': <SiPrisma className="text-purple-600 text-lg" />,
+  'NestJS': <SiNestjs  className="text-red-600 text-lg" />,
+  'SQL': <TbSql className="text-gray-800 text-lg" />,
+  'Java' : <FaJava className="text-red-600 text-lg" />,
+  'Redux': <SiRedux className="text-purple-600 text-lg" />,
+  'MySql': <DiMysql  className="text-gray-800 text-lg" />,
+  'Scrum': <DiScrum className="text-orange-600 text-lg" />,
 };
 
 const skillCategories = [
-  { id: 'Frontend', icon: <FaLaptopCode className="text-sky-500 text-xl" />, skills: ['React', 'TypeScript', 'JavaScript', 'Tailwind CSS', 'Vite'] },
-  { id: 'Backend', icon: <FaServer className="text-indigo-500 text-xl" />, skills: ['Node.js', 'Express', 'JWT', 'TypeORM'] },
-  { id: 'Banco de Dados', icon: <FaDatabase className="text-emerald-600 text-xl" />, skills: ['PostgreSQL', 'MongoDB'] },
-  { id: 'DevOps & Ferramentas', icon: <FaTools className="text-gray-700 text-xl" />, skills: ['Docker', 'Git', 'GitHub Actions', 'CI/CD', 'AWS S3'] },
-  { id: 'Testes & Qualidade', icon: <FaVial className="text-pink-500 text-xl" />, skills: ['Jest', 'Supertest', 'Vitest'] }
+  {
+    id: 'Frontend',
+    icon: <FaLaptopCode className="text-sky-500 text-xl" />,
+    skills: ['TypeScript','Vue.js', 'React', 'JavaScript', 'Vuetify', 'Tailwind CSS', 'Redux']
+  },
+  {
+    id: 'Backend',
+    icon: <FaServer className="text-indigo-500 text-xl" />,
+    skills: ['Node.js', 'Java','Express', 'NestJS', 'JWT', 'Prisma']
+  },
+  {
+    id: 'Banco de Dados',
+    icon: <FaDatabase className="text-emerald-600 text-xl" />,
+    skills: ['SQL', 'PostgreSQL','MySql', 'MongoDB']
+  },
+  {
+    id: 'Testes & Qualidade',
+    icon: <FaVial className="text-pink-500 text-xl" />,
+    skills: ['Jest', 'Supertest', 'Testing Library']
+  },
+  {
+    id: 'DevOps & Ferramentas',
+    icon: <FaTools className="text-gray-700 text-xl" />,
+    skills: ['Docker', 'Git', 'AWS SQS', 'AWS S3', 'AWS lambda', 'CI/CD', 'Scrum']
+  }
 ];
 
 const degrees = [
-  { title: 'Bacharel em Ciência da Computação', issuer: 'Universidade Federal do Brasil', link: 'https://universidadeexemplo.edu.br' },
-  { title: 'Certificado em Desenvolvimento Web Full Stack', issuer: 'Instituto Tech Academy', link: 'https://techacademy.com/certificados/fullstack' },
-  { title: 'Certificado em React', issuer: 'Plataforma ReactPro', link: 'https://reactpro.io/certificados/react' }
+  {
+    title: 'Pós-graduação Lato Sensu - Especialização em Engenharia de Software',
+    issuer: 'Universidade do Vale do Rio dos Sinos (Unisinos)',
+    link: 'https://www.unisinos.br/'
+  },
+  {
+    title: 'Análise e Desenvolvimento de Sistemas',
+    issuer: 'QI Faculdade & Escola Técnica',
+    link: 'https://qi.edu.br/'
+  },
+  {
+    title: 'Certificado em Desenvolvimento Web FullStack',
+    issuer: 'Escola Trybe',
+    link: 'https://betrybe.com/'
+  }
 ];
 
 const SkillCard = ({ icon, title, skills }: { icon: JSX.Element; title: string; skills: string[] }) => (
@@ -72,6 +143,7 @@ const SkillCard = ({ icon, title, skills }: { icon: JSX.Element; title: string; 
 
 const TechnicalSkillsAndDegree: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState<string>('Todos');
+
   const filteredCategories = activeCategory === 'Todos'
     ? skillCategories
     : skillCategories.filter((cat) => cat.id === activeCategory);
@@ -88,7 +160,7 @@ const TechnicalSkillsAndDegree: React.FC = () => {
               onClick={() => setActiveCategory(cat)}
               className={`px-4 py-2 rounded-full text-sm font-medium transition-colors
                 duration-200
-                ${activeCategory === cat 
+                ${activeCategory === cat
                     ? 'bg-white text-blue-950'
                     : 'bg-blue-800 text-white hover:bg-blue-700'
                 }

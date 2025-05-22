@@ -1,6 +1,6 @@
 import React, { JSX } from 'react';
-import { FaReact, FaNodeJs, FaDocker } from 'react-icons/fa';
-import { SiMongodb, SiPostgresql, SiTailwindcss, SiTypescript, SiFirebase, SiVite } from 'react-icons/si';
+import { FaReact, FaNodeJs, FaDocker, FaVuejs  } from 'react-icons/fa';
+import { SiMongodb, SiPostgresql, SiTailwindcss, SiTypescript, SiNestjs, SiPrisma  } from 'react-icons/si';
 import projectImage1 from '../../assets/teste.jpeg';
 
 interface Project {
@@ -14,27 +14,19 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: 'Projeto 1',
-    description: 'Aplicação full-stack para controle financeiro pessoal com dashboard em tempo real.',
-    link: 'https://github.com/seu-usuario/projeto1',
+    title: 'API Fincheck',
+    description: 'Este projeto tem como objetivo explorar e praticar conceitos com NestJS e Prisma, oferecendo um CRUD simples de contas financeiras.',
+    link: 'https://github.com/Lotar-lucas/api-fincheck',
     srcImage: projectImage1,
-    techs: ['React', 'Node.js', 'MongoDB', 'TailwindCSS'],
+    techs: ['Node.js', 'TypeScript', 'NestJS', 'Prisma', 'PostgreSQL'],
     status: 'Concluído',
-  },
-  {
-    title: 'Projeto 2',
-    description: 'API de autenticação com JWT e OAuth2 integrada com serviços externos.',
-    link: 'https://github.com/seu-usuario/projeto2',
-    srcImage: projectImage1,
-    techs: ['Node.js', 'TypeScript', 'PostgreSQL', 'Docker'],
-    status: 'Open Source',
   },
   {
     title: 'Projeto 3',
     description: 'Sistema de agendamento online com área administrativa e notificações por e-mail.',
     link: 'https://github.com/seu-usuario/projeto3',
     srcImage: projectImage1,
-    techs: ['Vue.js', 'Firebase', 'Vite'],
+    techs: ['Vue.js'],
     status: 'Em andamento',
   },
 ];
@@ -47,8 +39,9 @@ const techIcons: Record<string, JSX.Element> = {
   'TypeScript': <SiTypescript className="text-blue-600" title="TypeScript" />,
   'PostgreSQL': <SiPostgresql className="text-blue-800" title="PostgreSQL" />,
   'Docker': <FaDocker className="text-blue-400" title="Docker" />,
-  'Firebase': <SiFirebase className="text-yellow-500" title="Firebase" />,
-  'Vite': <SiVite className="text-purple-500" title="Vite" />,
+  'NestJS': <SiNestjs className="text-red-600" title="NestJS" />,
+  'Prisma': <SiPrisma className="text-purple-600" title="Prisma" />,
+  'Vue.js': <FaVuejs  className="text-green-600" title="Vue.js" />,
 };
 
 const statusColorMap = {
