@@ -1,30 +1,59 @@
 import React from 'react';
+import photo from '../../assets/perfil-2.jpg'
 
 const About: React.FC = () => {
   return (
     <section id="sobre" className="bg-blue-950 px-6 py-24">
-      <div className="max-w-6xl mx-auto flex flex-col-reverse md:flex-row items-center gap-12">
+      <div className="max-w-6xl mx-auto flex flex-col-reverse md:flex-row items-start md:items-center gap-12">
+
 
         <div className="md:w-1/2 text-white">
           <h1 className="text-3xl md:text-4xl font-bold text-blue-300 mb-6">
-            Sobre
+            Sobre mim
           </h1>
 
+          <p className="text-lg leading-relaxed text-gray-200 mb-6">
+            Sou desenvolvedor backend com mais de 3 anos de experiência no desenvolvimento de sistemas
+            <strong> escaláveis, seguros e de alta performance</strong>. Tenho como foco entregar soluções bem arquitetadas,
+            que resolvam problemas reais de forma eficiente e sustentável ao longo do tempo.
+          </p>
+
+          <p className="text-lg leading-relaxed text-gray-200 mb-6">
+            No dia a dia, atuo com <strong>JavaScript, TypeScript e Node.js</strong>, além de serviços em nuvem (<strong>AWS</strong>),
+            bancos de dados relacionais, mensageria e conteinerização. Mais do que dominar ferramentas,
+            busco compreender profundamente os desafios técnicos e propor soluções que façam sentido no contexto
+            do produto e do negócio.
+          </p>
+
+          <p className="text-lg leading-relaxed text-gray-200 mb-6">
+            Estou em constante evolução, com foco em <strong>arquitetura de software, system design, padrões de projeto</strong> e
+            boas práticas em ambientes distribuídos. Acredito que software bem feito é resultado de um equilíbrio entre
+            <strong> clareza técnica, colaboração e melhoria contínua</strong>.
+          </p>
+
+          <p className="text-lg leading-relaxed text-gray-200 mb-6">
+            Se você busca alguém comprometido com <strong>qualidade, evolução profissional</strong> e <strong>impacto real no time</strong>,
+            ficarei feliz em conversar.
+          </p>
+
           <p className="text-lg leading-relaxed text-gray-200">
-            Eu sou um desenvolvedor apaixonado por tecnologia e inovação. Tenho experiência em
-             <strong className="text-blue-400"> React</strong>, <strong className="text-blue-400">TypeScript </strong>
-            e outras tecnologias modernas. Estou sempre buscando aprender e evoluir para alcançar novos patamares na
-            minha carreira.
+            <strong>Entre em contato</strong> — será um prazer trocar ideias.
+            <a href="#contato">
+              <button className="mt-4 px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-md transition duration-300">
+                Fale comigo
+              </button>
+            </a>
           </p>
         </div>
 
         <div className="md:w-1/2 flex justify-center">
           <img
-            src="https://img.freepik.com/fotos-gratis/retrato-de-homem-branco-isolado_53876-40306.jpg?semt=ais_hybrid&w=740"
+            src={photo}
             alt="Foto de perfil"
-            className="w-64 h-64 object-cover rounded-xl shadow-lg hover:scale-105 transition-transform duration-300"
+            className="w-98 h-98 object-cover rounded-xl shadow-lg hover:scale-105 transition-transform duration-300 self-center"
           />
         </div>
+
       </div>
     </section>
   );
