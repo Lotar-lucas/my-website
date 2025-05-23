@@ -1,13 +1,13 @@
 import React from 'react';
-import photo from '../../assets/perfil-2.jpg'
+import photo from '../../assets/perfil-2.jpg';
+import logo from '../../assets/logo.png'; // ajuste se o caminho for diferente
 
 const About: React.FC = () => {
   return (
     <section id="sobre" className="bg-blue-200 px-6 py-24">
       <div className="max-w-6xl mx-auto flex flex-col-reverse md:flex-row items-start md:items-center gap-12">
 
-
-        <div className="md:w-1/2 ">
+        <div className="md:w-1/2">
           <h1 className="text-3xl md:text-4xl text-blue-900 font-extrabold mb-6">
             Sobre mim
           </h1>
@@ -31,30 +31,33 @@ const About: React.FC = () => {
             <strong> clareza técnica, colaboração e melhoria contínua</strong>.
           </p>
 
-          <p className="text-lg leading-relaxed text-gray-950 mb-6">
+          <p className="text-lg leading-relaxed text-gray-950 ">
             Se você busca alguém comprometido com <strong>qualidade, evolução profissional</strong> e <strong>impacto real no time</strong>,
             ficarei feliz em conversar.
           </p>
 
-          <p className="text-lg leading-relaxed text-gray-950 ">
+          <p className="text-lg leading-relaxed text-gray-950">
             <strong>Entre em contato</strong> — será um prazer trocar ideias.
-
             <a href="#contato">
-              <button className="mt-4 px-6 py-2 bg-blue-500 hover:bg-white hover:text-blue-500 text-white  rounded-md transition duration-200">
+              <button className="mt-4 px-6 py-2 bg-blue-500 hover:bg-white hover:text-blue-500 text-white rounded-md transition duration-200">
                 Fale comigo
               </button>
             </a>
           </p>
         </div>
 
-        <div className="md:w-1/2 flex justify-center">
+        <div className="md:w-1/2 flex flex-col justify-center items-start md:items-center ">
           <img
             src={photo}
             alt="Foto de perfil"
-            className="w-98 h-98 object-cover rounded-xl shadow-lg hover:scale-105 transition-transform duration-300 self-center"
+            className="w-98 h-98 object-cover rounded-xl shadow-lg hover:scale-105 transition-transform duration-300 mb-6"
+          />
+          <img
+            src={logo}
+            alt="Logo Lotar Desenvolvedor de Software"
+            className="h-98 md:h-78 w-auto mt-4 rounded-md shadow-sm transition-transform duration-300 hover:scale-105"
           />
         </div>
-
       </div>
     </section>
   );

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { FaCode } from 'react-icons/fa';
+import Logo from './../../assets/logo.png';
 
 const Header: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -87,11 +88,25 @@ const Header: React.FC = () => {
       }`}
     >
       <div className="flex justify-between items-center max-w-7xl mx-auto px-6 py-4">
-        <a href="#" className="flex items-center gap-2 hover:opacity-80 transition-opacity duration-300">
-          <FaCode className="text-white text-2xl" />
+        {/* <a href="#" className="flex items-center gap-2 hover:opacity-80 transition-opacity duration-300"> */}
+          {/* <FaCode className="text-white text-2xl" />
           <h1 className="text-2xl font-bold text-white">
             Lucas <span className="text-blue-300">Lotar</span>
           </h1>
+
+          <img src={Logo} alt="Logo Lotar" className="h-10 w-auto" />
+        </a> */}
+
+        <a href="#" className="flex flex-col items-start gap-1 hover:opacity-80 transition-opacity duration-300">
+          <div className="flex items-center gap-2">
+            <FaCode className="text-white text-2xl" />
+            <span className="text-2xl font-bold text-white">
+              Lotar
+            </span>
+          </div>
+          <span className="text-sm text-blue-200 tracking-wide">
+            Desenvolvedor de Software
+          </span>
         </a>
 
         <nav>
