@@ -64,8 +64,8 @@ const Projects: React.FC = () => {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-lg
-                  transition-shadow flex flex-col h-full"
+              className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-2xl 
+                hover:-translate-y-1 hover:scale-[1.02] transition-all duration-300 ease-in-out flex flex-col h-full"
             >
               <img
                 src={project.srcImage}
@@ -90,8 +90,8 @@ const Projects: React.FC = () => {
                   {project.techs.map((tech, i) => (
                     <div
                       key={i}
-                      className="flex items-center gap-1 text-xs text-blue-800 bg-gray-100
-                         px-2 py-1 rounded-full hover:bg-gray-200 hover:scale-[1.03] transition-all duration-150"
+                      className="flex items-center gap-1 text-xs text-blue-800 bg-gray-100 px-2 py-1 rounded-full
+                       hover:bg-gray-200 hover:scale-[1.03] transition-all duration-150 cursor-default"
                     >
                       {techIcons[tech] || null}
 
