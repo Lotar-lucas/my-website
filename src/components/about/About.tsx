@@ -12,31 +12,31 @@ const About: React.FC = () => {
             Sobre mim
           </h1>
 
-          <p className="text-lg leading-relaxed text-gray-950 mb-6">
+          <p className="text-lg leading-relaxed text-blue-800 mb-6">
             Sou desenvolvedor backend com mais de 3 anos de experiência no desenvolvimento de sistemas
             <strong> escaláveis, seguros e de alta performance</strong>. Tenho como foco entregar soluções bem arquitetadas,
             que resolvam problemas reais de forma eficiente e sustentável ao longo do tempo.
           </p>
 
-          <p className="text-lg leading-relaxed text-gray-950 mb-6">
+          <p className="text-lg leading-relaxed text-blue-800 mb-6">
             No dia a dia, atuo com <strong>JavaScript, TypeScript e Node.js</strong>, além de serviços em nuvem (<strong>AWS</strong>),
             bancos de dados relacionais, mensageria e conteinerização. Mais do que dominar ferramentas,
             busco compreender profundamente os desafios técnicos e propor soluções que façam sentido no contexto
             do produto e do negócio.
           </p>
 
-          <p className="text-lg leading-relaxed text-gray-950 mb-6">
+          <p className="text-lg leading-relaxed text-blue-800 mb-6">
             Estou em constante evolução, com foco em <strong>arquitetura de software, system design, padrões de projeto</strong> e
             boas práticas em ambientes distribuídos. Acredito que software bem feito é resultado de um equilíbrio entre
             <strong> clareza técnica, colaboração e melhoria contínua</strong>.
           </p>
 
-          <p className="text-lg leading-relaxed text-gray-950 ">
+          <p className="text-lg leading-relaxed text-blue-800 ">
             Se você busca alguém comprometido com <strong>qualidade, evolução profissional</strong> e <strong>impacto real no time</strong>,
             ficarei feliz em conversar.
           </p>
 
-          <p className="text-lg leading-relaxed text-gray-950">
+          <p className="text-lg leading-relaxed text-blue-800">
             <strong>Entre em contato</strong> — será um prazer trocar ideias.
             <a href="#contato">
               <button className="mt-4 px-6 py-2 bg-blue-500 hover:bg-white hover:text-blue-500 text-white rounded-md transition duration-200">

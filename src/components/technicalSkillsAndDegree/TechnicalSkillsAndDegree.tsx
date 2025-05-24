@@ -124,20 +124,23 @@ const SkillCard = ({ icon, title, skills }: { icon: JSX.Element; title: string; 
     animate={{ opacity: 1, y: 0 }}
     exit={{ opacity: 0, y: -10 }}
     transition={{ duration: 0.8 }}
-    className="bg-white rounded-xl shadow-md p-6 flex flex-col gap-3 hover:shadow-lg transition-shadow min-h-[240px]"
+    className="bg-white rounded-xl shadow-md p-6 flex flex-col gap-3 min-h-[240px] w-full"
   >
-    <div className="flex items-center gap-2">
-      {icon}
-      <h3 className="font-semibold text-blue-900 text-lg">{title}</h3>
-    </div>
 
-    <ul className="text-sm text-gray-800 space-y-2">
-      {skills.map((skill, i) => (
-        <li key={i} className="flex items-center gap-2">
-          {iconMap[skill] || <FaTools className="text-gray-500" />} {skill}
-        </li>
-      ))}
-    </ul>
+    <section className='cursor-default hover:scale-105 transition-all duration-200 ease-in-out'>
+      <div className="flex items-center gap-2">
+        {icon}
+        <h3 className="font-semibold text-blue-900 text-lg">{title}</h3>
+      </div>
+
+      <ul className="text-sm text-gray-800 space-y-2 pt-2">
+        {skills.map((skill, i) => (
+          <li key={i} className="flex items-center gap-2">
+            {iconMap[skill] || <FaTools className="text-gray-500" />} {skill}
+          </li>
+        ))}
+      </ul>
+    </section>
   </motion.div>
 );
 
@@ -158,8 +161,7 @@ const TechnicalSkillsAndDegree: React.FC = () => {
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-colors
-                duration-200
+              className={`px-4 py-2 rounded-full text-sm font-medium hover:scale-105 transition-all duration-200 ease-in-out
                 ${activeCategory === cat
                     ? 'bg-white text-blue-950'
                     : 'bg-blue-800 text-white hover:bg-blue-700'
@@ -171,13 +173,19 @@ const TechnicalSkillsAndDegree: React.FC = () => {
           ))}
         </div>
 
-        <AnimatePresence mode="wait">
-          <motion.div layout className="min-h-[320px] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-4">
-            {filteredCategories.map((cat) => (
-              <SkillCard key={cat.id} icon={cat.icon} title={cat.id} skills={cat.skills} />
-            ))}
-          </motion.div>
-        </AnimatePresence>
+          <div className="relative min-h-[600px]"> {/* Ajuste conforme o tamanho necessário */}
+            <AnimatePresence mode="wait">
+              <motion.div
+                layout
+                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-4"
+              >
+                {filteredCategories.map((cat) => (
+                  <SkillCard key={cat.id} icon={cat.icon} title={cat.id} skills={cat.skills} />
+                ))}
+              </motion.div>
+            </AnimatePresence>
+          </div>
+
 
         <h2 className="text-3xl font-bold text-blue-900 mb-8 pt-24 text-center">Diplomas e Certificados</h2>
 
