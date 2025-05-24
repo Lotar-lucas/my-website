@@ -179,7 +179,7 @@ const TechnicalSkillsAndDegree: React.FC = () => {
           </motion.div>
         </AnimatePresence>
 
-        <h2 className="text-3xl font-bold text-blue-200 mb-10 text-center">Diplomas e Certificados</h2>
+        <h2 className="text-3xl font-bold text-blue-900 mb-8 pt-24 text-center">Diplomas e Certificados</h2>
 
         <div className="flex flex-col gap-5">
           {degrees.map((degree, i) => (
@@ -188,7 +188,7 @@ const TechnicalSkillsAndDegree: React.FC = () => {
               href={degree.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-white rounded-xl shadow-md p-5 flex flex-col sm:flex-row items-start sm:items-center
+              className="bg-white rounded-xl shadow-md p-6 flex flex-col sm:flex-row items-start sm:items-center
                 gap-4 hover:shadow-lg hover:scale-[1.01] transition-all duration-200 group"
             >
               <FaGraduationCap className="text-blue-600 text-xl" />
