@@ -9,33 +9,33 @@ const Header: React.FC = () => {
     const onScroll = () => {
       setScrolled(window.scrollY > 20);
 
-      // Checks if at the bottom of the page and forces "contato" as active
-      const atBottom = Math.abs(window.innerHeight + window.scrollY - document.body.scrollHeight) < 5;
-      if (atBottom) {
-        setActiveSection('contato');
-        // Prevents the loop from overwriting the state
-      }
+      const sectionIds = ['sobre', 'projetos', 'habilidades', 'certificados']; // contato removido
+      let currentSection = '';
+      const offset = 200;
 
-      const sections = ['sobre', 'projetos', 'habilidades', 'contato'];
-      const scrollY = window.scrollY + 150;
-
-      for (const section of sections) {
-        const element = document.getElementById(section);
-
+      for (const id of sectionIds) {
+        const element = document.getElementById(id);
         if (element) {
-          const top = element.offsetTop;
-          const bottom = top + element.offsetHeight;
+          const rect = element.getBoundingClientRect();
+          const isVisible = rect.top <= offset && rect.bottom > offset;
 
-          if (scrollY >= top && scrollY < bottom) {
-            setActiveSection(section);
+          if (isVisible) {
+            currentSection = id;
             break;
           }
         }
       }
+
+      const atBottom = Math.abs(window.innerHeight + window.scrollY - document.body.scrollHeight) < 5;
+
+      if (atBottom) {
+        setActiveSection('contato'); // só ativa contato no fundo mesmo
+      } else if (currentSection) {
+        setActiveSection(currentSection); // ativa os demais ao rolar
+      }
     };
 
     window.addEventListener('scroll', onScroll);
-    onScroll();
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
@@ -47,34 +47,24 @@ const Header: React.FC = () => {
     };
   }, []);
 
- const navLinkClass = (id: string) => {
-  const isActive = activeSection === id;
+  const navLinkClass = (id: string) => {
+    const isActive = activeSection === id;
+    const base = 'font-medium px-2 py-1 rounded-md transition-all duration-300 ease-in-out';
 
-  // Common base style for all menu links
-  const base = 'font-medium px-2 py-1 rounded-md transition-all duration-300 ease-in-out';
+    const scrollClasses = scrolled
+      ? (
+          isActive
+            ? 'text-white bg-blue-600/20 underline underline-offset-8 decoration-white decoration-2'
+            : 'text-white hover:text-blue-100 hover:bg-blue-600/10 hover:underline hover:underline-offset-8 hover:decoration-blue-100'
+        )
+      : (
+          isActive
+            ? 'text-white underline underline-offset-8 decoration-blue-100 decoration-2'
+            : 'text-white hover:text-blue-200 hover:bg-blue-600/10 hover:underline hover:underline-offset-8 hover:decoration-blue-200'
+        );
 
-  // Sets classes according to scroll state and whether the item is active
-  const scrollClasses = scrolled
-    ? (
-        isActive
-          // If the page is scrolled and the link is active
-          ? 'text-white bg-blue-600/20 underline underline-offset-8 decoration-white decoration-2'
-          // If the page is scrolled and the link is NOT active
-          : 'text-white hover:text-blue-100 hover:bg-blue-600/10 hover:underline hover:underline-offset-8 hover:decoration-blue-100'
-      )
-    : (
-        isActive
-          // If the page is NOT scrolled and the link is active
-          ? 'text-white underline underline-offset-8 decoration-blue-100 decoration-2'
-          // If the page is NOT scrolled and the link is NOT active
-          : 'text-white hover:text-blue-200 hover:bg-blue-600/10 hover:underline hover:underline-offset-8 hover:decoration-blue-200'
-      );
-
-  // Returns the combination of base styles + conditional styles
-  return `${base} ${scrollClasses}`;
-};
-
-
+    return `${base} ${scrollClasses}`;
+  };
 
   return (
     <header
@@ -86,42 +76,18 @@ const Header: React.FC = () => {
         <a href="#" className="flex flex-col items-start gap-1 hover:opacity-80 transition-opacity duration-300">
           <div className="flex items-center gap-2">
             <FaCode className="text-white text-2xl" />
-
-            <span className="text-2xl font-bold text-white">
-              Lotar
-            </span>
+            <span className="text-2xl font-bold text-white">Lotar</span>
           </div>
-
-          <span className="text-sm text-blue-200 tracking-wide">
-            Desenvolvedor de Software
-          </span>
+          <span className="text-sm text-blue-200 tracking-wide">Desenvolvedor de Software</span>
         </a>
 
         <nav>
           <ul className="flex space-x-10">
-            <li>
-              <a href="#sobre" className={navLinkClass('sobre')}>
-                Sobre
-              </a>
-            </li>
-
-            <li>
-              <a href="#projetos" className={navLinkClass('projetos')}>
-                Projetos
-              </a>
-            </li>
-
-            <li>
-              <a href="#habilidades" className={navLinkClass('habilidades')}>
-                Habilidades
-              </a>
-            </li>
-
-            <li>
-              <a href="#contato" className={navLinkClass('contato')}>
-                Contato
-              </a>
-            </li>
+            <li><a href="#sobre" className={navLinkClass('sobre')}>Sobre</a></li>
+            <li><a href="#projetos" className={navLinkClass('projetos')}>Projetos</a></li>
+            <li><a href="#habilidades" className={navLinkClass('habilidades')}>Habilidades</a></li>
+            <li><a href="#certificados" className={navLinkClass('certificados')}>Certificados</a></li>
+            <li><a href="#contato" className={navLinkClass('contato')}>Contato</a></li>
           </ul>
         </nav>
       </div>
