@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { TypeAnimation } from 'react-type-animation';
 import { motion } from 'framer-motion';
-import { FaEnvelope, FaGithub, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
+import { FaEnvelope, FaGithub, FaInstagram, FaLinkedinIn, FaWhatsapp } from 'react-icons/fa';
 import contacts from '../../helpers/envs';
 
 const PersonalIntroduction: React.FC = () => {
@@ -84,16 +84,22 @@ const PersonalIntroduction: React.FC = () => {
           </a>
 
           <div className="mt-3 flex justify-center gap-4 text-white">
-            <a href={`mailto:${contacts.email}`} title="Email" target='_blank' aria-label="Email">
-              <FaEnvelope className="w-6 h-6 hover:text-blue-300 hover:scale-110 transition-transform duration-200" />
-            </a>
-
             <a href={contacts.linkedIn} title="LinkedIn" target="_blank" aria-label="Linkedin">
               <FaLinkedinIn className="w-6 h-6 hover:text-blue-300 hover:scale-110 transition-transform duration-200" />
             </a>
 
+            <a href={contacts.whatsapp} target='_blank' className="text-gray-100 hover:text-blue-300 transition-all"
+              title='WhatsApp' aria-label='WhatsApp'
+            >
+              <FaWhatsapp className="w-6 h-6 hover:text-blue-300 hover:scale-110 transition-transform duration-200" />
+            </a>
+
             <a href={contacts.github} title="GitHub" target="_blank" aria-label="Github">
               <FaGithub className="w-6 h-6 hover:text-blue-300 hover:scale-110 transition-transform duration-200" />
+            </a>
+
+            <a href={`mailto:${contacts.email}`} title="Email" target='_blank' aria-label="Email">
+              <FaEnvelope className="w-6 h-6 hover:text-blue-300 hover:scale-110 transition-transform duration-200" />
             </a>
 
             <a href={contacts.instagram} title="GitHub" target="_blank" aria-label="Instagram">

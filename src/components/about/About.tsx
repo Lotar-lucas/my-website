@@ -38,14 +38,6 @@ const About: React.FC = () => {
             ficarei feliz em conversar.
           </p>
 
-          {/* <p className="text-lg leading-relaxed text-blue-800">
-            <strong>Entre em contato</strong> — será um prazer trocar ideias.
-            <a href="#contato">
-              <button className="mt-4 px-6 py-2 bg-blue-500 hover:bg-white hover:text-blue-500 text-white rounded-md transition duration-200">
-                Fale comigo
-              </button>
-            </a>
-          </p> */}
           <p className="text-lg leading-relaxed text-blue-800">
             <strong>Entre em contato</strong> — será um prazer trocar ideias.
 

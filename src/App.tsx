@@ -14,8 +14,8 @@ import Contact from './components/contact/Contact';
 const App: React.FC = () => {
   useEffect(() => {
     AOS.init({
-      duration: 800, // duração da animação em ms
-      once: false,    // anima só na primeira vez que aparece
+      duration: 800,
+      once: false,
     });
   }, []);
 

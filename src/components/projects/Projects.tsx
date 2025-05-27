@@ -43,6 +43,7 @@ const projects: Project[] = [
       Construída com React, TypeScript e TailwindCSS, utiliza animações com Framer Motion \n
       A aplicação está hospedada na AWS, garantindo alta disponibilidade, escalabilidade e performance desde a entrega inicial.`,
     srcImage: imgProjectCard,
+    link: 'https://github.com/Lotar-lucas/portfolio',
     techs: ['React', 'TypeScript', 'TailwindCSS', 'Framer Motion', 'AWS'],
     status: 'Em andamento',
   },
@@ -89,9 +90,8 @@ const Projects: React.FC = () => {
               className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-2xl
                 hover:-translate-y-1 hover:scale-[1.02] transition-transform duration-300 ease-in-out flex flex-col h-full"
               data-aos="zoom-in"
-              data-aos-delay={index * 150} // Delay em cascata
+              data-aos-delay={index * 150}
             >
-              {/* hover:scale-110 transition-transform duration-200 */}
               <img
                 src={project.srcImage}
                 alt={project.title}
