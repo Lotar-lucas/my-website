@@ -1,6 +1,6 @@
 import React from 'react';
 import photo from '../../assets/perfil-2.jpg';
-import logo from '../../assets/logo.png'; // ajuste se o caminho for diferente
+import logo from '../../assets/logo.png';
 import { FaWhatsapp } from 'react-icons/fa';
 import contacts from '../../helpers/envs';
 

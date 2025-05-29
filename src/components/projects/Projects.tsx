@@ -90,7 +90,7 @@ const Projects: React.FC = () => {
               className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-2xl
                 hover:-translate-y-1 hover:scale-[1.02] transition-transform duration-300 ease-in-out flex flex-col h-full"
               data-aos="zoom-in"
-              data-aos-delay={index * 150}
+              data-aos-delay={index * 150} 
             >
               <img
                 src={project.srcImage}
