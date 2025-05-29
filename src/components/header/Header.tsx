@@ -9,7 +9,7 @@ const Header: React.FC = () => {
     const onScroll = () => {
       setScrolled(window.scrollY > 20);
 
-      const sectionIds = ['sobre', 'projetos', 'habilidades', 'certificados']; // contato removido
+      const sectionIds = ['sobre', 'projetos', 'habilidades', 'certificados'];
       let currentSection = '';
       const offset = 200;
 
@@ -29,9 +29,9 @@ const Header: React.FC = () => {
       const atBottom = Math.abs(window.innerHeight + window.scrollY - document.body.scrollHeight) < 5;
 
       if (atBottom) {
-        setActiveSection('contato'); // só ativa contato no fundo mesmo
+        setActiveSection('contato'); // only activate 'contato' at the very bottom
       } else if (currentSection) {
-        setActiveSection(currentSection); // ativa os demais ao rolar
+        setActiveSection(currentSection); // activates the others on scroll
       }
     };
 
@@ -76,8 +76,10 @@ const Header: React.FC = () => {
         <a href="#" className="flex flex-col items-start gap-1 hover:opacity-80 transition-opacity duration-300">
           <div className="flex items-center gap-2">
             <FaCode className="text-white text-2xl" />
+
             <span className="text-2xl font-bold text-white">Lotar</span>
           </div>
+
           <span className="text-sm text-blue-200 tracking-wide">Desenvolvedor de Software</span>
         </a>
 

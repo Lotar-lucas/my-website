@@ -43,6 +43,7 @@ const projects: Project[] = [
       Construída com React, TypeScript e TailwindCSS, utiliza animações com Framer Motion \n
       A aplicação está hospedada na AWS, garantindo alta disponibilidade, escalabilidade e performance desde a entrega inicial.`,
     srcImage: imgProjectCard,
+    link: 'https://github.com/Lotar-lucas/portfolio',
     techs: ['React', 'TypeScript', 'TailwindCSS', 'Framer Motion', 'AWS'],
     status: 'Em andamento',
   },

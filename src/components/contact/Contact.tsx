@@ -11,16 +11,16 @@ const Contact: React.FC = () => {
         <p className="text-lg leading-relaxed text-gray-100 mb-2 mt-8">Vamos Conectar?</p>
 
         <div className="flex justify-center gap-10 items-center max-w-xs mx-auto">
-          <a href={`mailto:${contacts.email}`} target='_blank' className="text-gray-100 hover:text-blue-300 transition-all"
-            title='Email' aria-label='Email'
-          >
-            <FaEnvelope className="w-6 h-6" />
-          </a>
-
           <a href={contacts.linkedIn} target='_blank' className="text-gray-100 hover:text-blue-300 transition-all"
             title='LinkedIn' aria-label='LinkedIn'
           >
             <FaLinkedinIn className="w-6 h-6" />
+          </a>
+
+          <a href={contacts.whatsapp} target='_blank' className="text-gray-100 hover:text-blue-300 transition-all"
+            title='WhatsApp' aria-label='WhatsApp'
+          >
+            <FaWhatsapp className="w-6 h-6" />
           </a>
 
           <a href={contacts.github} target='_blank' className="text-gray-100 hover:text-blue-300 transition-all"
@@ -29,17 +29,19 @@ const Contact: React.FC = () => {
             <FaGithub className="w-6 h-6" />
           </a>
 
+          <a href={`mailto:${contacts.email}`} target='_blank' className="text-gray-100 hover:text-blue-300 transition-all"
+            title='Email' aria-label='Email'
+          >
+            <FaEnvelope className="w-6 h-6" />
+          </a>
+
+
           <a href={contacts.instagram} target='_blank' className="text-gray-100 hover:text-blue-300 transition-all"
             title='Instagram' aria-label='Instagram'
           >
             <FaInstagram className="w-6 h-6" />
           </a>
 
-          <a href={contacts.whatsapp} target='_blank' className="text-gray-100 hover:text-blue-300 transition-all"
-            title='WhatsApp' aria-label='WhatsApp'
-          >
-            <FaWhatsapp className="w-6 h-6" />
-          </a>
         </div>
 
         <p className="text-sm leading-relaxed text-gray-100 mt-4">© 2025 Lucas Lotar. Todos os direitos reservados.</p>
