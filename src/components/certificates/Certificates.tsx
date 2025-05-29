@@ -43,8 +43,10 @@ const Certificates: React.FC = () => {
               data-aos-delay={i * 100}
             >
               <FaGraduationCap className="text-blue-600 text-xl" />
+
               <div>
                 <p className="text-base font-semibold text-blue-800 group-hover:underline">{degree.title}</p>
+
                 <p className="text-sm text-gray-600">{degree.issuer}</p>
               </div>
             </a>
