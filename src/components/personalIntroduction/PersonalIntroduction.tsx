@@ -28,8 +28,8 @@ const PersonalIntroduction: React.FC = () => {
         className="absolute top-0 left-0 w-full h-full object-cover object-top z-0"
         aria-label="Vídeo de introdução com animações visuais"
       >
-        <source src="/src/assets/portfolio-video.webm" type="video/webm" />
-        <source src="/src/assets/portfolio-video.mp4" type="video/mp4" />
+        <source src="/videos/portfolio-video.webm" type="video/webm" />
+        <source src="/videos/portfolio-video.mp4" type="video/mp4" />
         Seu navegador não suporta vídeos.
       </video>
 

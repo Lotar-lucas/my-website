@@ -2,7 +2,7 @@ import React, { JSX } from 'react';
 import { FaReact, FaNodeJs, FaDocker, FaVuejs, FaAws } from 'react-icons/fa';
 import { SiMongodb, SiPostgresql, SiTailwindcss, SiTypescript, SiNestjs, SiPrisma, SiVuetify } from 'react-icons/si';
 import { TbBrandFramerMotion } from 'react-icons/tb';
-import projectImage1 from '../../assets/teste.jpeg';
+import projectImage1 from '../../assets/img-project-default.jpeg';
 import imgDefault from '../../assets/img-default.png';
 import imgProjectCard from '../../assets/project-card.png';
 
