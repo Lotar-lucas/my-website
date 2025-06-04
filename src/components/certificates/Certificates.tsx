@@ -21,7 +21,7 @@ const degrees = [
 
 const Certificates: React.FC = () => {
   return (
-    <section id="certificados" className="bg-blue-200 pt-16 pb-4 px-4 sm:px-6">
+    <section id="certificados" className="bg-blue-200 pt-16 pb-16 px-4 sm:px-6">
       <div className="max-w-6xl mx-auto">
         <h2
           className="text-3xl font-extrabold text-blue-900 mb-8 text-center"

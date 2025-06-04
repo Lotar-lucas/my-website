@@ -48,7 +48,7 @@ const About: React.FC = () => {
             >
               <button
                 className="mt-4 px-6 py-2 flex items-center gap-2 bg-blue-500 text-white rounded shadow-md border border-blue-500
-                 hover:scale-[1.08] text-sm md:text-base transition-all duration-200 ease-in-out bg-opacity-80" title='WhatsApp' aria-label='WhatsApp'
+                 hover:scale-[1.08] text-sm md:text-base transition-all duration-200 ease-in-out bg-opacity-80 focus:outline-none" title='WhatsApp' aria-label='WhatsApp'
               >
                 <FaWhatsapp className="w-6 h-6 text-green-300" />
                 Vamos conversar?

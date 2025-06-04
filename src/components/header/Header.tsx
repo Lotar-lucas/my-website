@@ -1,96 +1,138 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FaCode } from 'react-icons/fa';
+import { HiOutlineMenuAlt3, HiX } from 'react-icons/hi';
 
 const Header: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('');
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => {
+  const onScroll = () => {
       setScrolled(window.scrollY > 20);
+      const ids = ['sobre', 'projetos', 'habilidades', 'certificados', 'contato'];
+      const viewportMiddle = window.innerHeight / 2;
+      let current = '';
 
-      const sectionIds = ['sobre', 'projetos', 'habilidades', 'certificados'];
-      let currentSection = '';
-      const offset = 200;
-
-      for (const id of sectionIds) {
-        const element = document.getElementById(id);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          const isVisible = rect.top <= offset && rect.bottom > offset;
-
-          if (isVisible) {
-            currentSection = id;
-            break;
-          }
+      for (const id of ids) {
+        const el = document.getElementById(id);
+        if (!el) continue;
+        const rect = el.getBoundingClientRect();
+        if (rect.top <= viewportMiddle && rect.bottom > viewportMiddle) {
+          current = id;
+          break;
         }
       }
 
-      const atBottom = Math.abs(window.innerHeight + window.scrollY - document.body.scrollHeight) < 5;
+      const bottomReached =
+        Math.abs(window.innerHeight + window.scrollY - document.body.scrollHeight) < 10;
+      if (bottomReached) current = 'contato';
 
-      if (atBottom) {
-        setActiveSection('contato');
-      } else if (currentSection) {
-        setActiveSection(currentSection);
-      }
+      setActiveSection(current);
     };
 
-    window.addEventListener('scroll', onScroll);
-    return () => window.removeEventListener('scroll', onScroll);
+    addEventListener('scroll', onScroll);
+    return () => removeEventListener('scroll', onScroll);
   }, []);
+
 
   useEffect(() => {
     const html = document.documentElement;
     html.style.scrollBehavior = 'smooth';
-    return () => {
-      html.style.scrollBehavior = 'auto';
-    };
+    return () => { html.style.scrollBehavior = 'auto'; };
   }, []);
 
   const navLinkClass = (id: string) => {
-    const isActive = activeSection === id;
-    const base = 'font-medium px-2 py-1 rounded-md transition-all duration-300 ease-in-out';
+    const base =
+      'font-medium px-2 md:px-3 py-1 rounded-md transition-all duration-300 ease-in-out text-base md:text-lg';
+    const on = activeSection === id;
+    const variant = scrolled
+      ? on
+        ? 'text-white bg-blue-600/20 underline underline-offset-8 decoration-white decoration-2'
+        : 'text-white hover:text-blue-100 hover:bg-blue-600/10 hover:underline hover:underline-offset-8 hover:decoration-blue-100'
+      : on
+        ? 'text-white underline underline-offset-8 decoration-blue-100 decoration-2'
+        : 'text-white hover:text-blue-200 hover:bg-blue-600/10 hover:underline hover:underline-offset-8 hover:decoration-blue-200';
 
-    const scrollClasses = scrolled
-      ? (
-          isActive
-            ? 'text-white bg-blue-600/20 underline underline-offset-8 decoration-white decoration-2'
-            : 'text-white hover:text-blue-100 hover:bg-blue-600/10 hover:underline hover:underline-offset-8 hover:decoration-blue-100'
-        )
-      : (
-          isActive
-            ? 'text-white underline underline-offset-8 decoration-blue-100 decoration-2'
-            : 'text-white hover:text-blue-200 hover:bg-blue-600/10 hover:underline hover:underline-offset-8 hover:decoration-blue-200'
-        );
-
-    return `${base} ${scrollClasses}`;
+    return `${base} ${variant}`;
   };
 
   return (
     <header
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+      className={`fixed top-0 z-50 w-full transition-all duration-300 ${
         scrolled ? 'bg-gradient-to-r from-blue-900 to-blue-500 shadow-md' : 'bg-transparent'
       }`}
     >
-      <div className="flex justify-between items-center max-w-7xl mx-auto px-6 py-4">
-        <a href="#" className="flex flex-col items-start gap-1 hover:opacity-80 transition-opacity duration-300">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+        <a href="#" className="flex flex-col items-start gap-1 transition-opacity hover:opacity-80">
           <div className="flex items-center gap-2">
-            <FaCode className="text-white text-2xl" />
+            <FaCode className="text-2xl text-white" />
+
             <span className="text-2xl font-bold text-white">Lotar</span>
           </div>
-          <span className="text-sm text-blue-200 tracking-wide">Desenvolvedor de Software</span>
+
+          <span className="text-sm tracking-wide text-blue-200">Desenvolvedor de Software</span>
         </a>
 
-        <nav>
-          <ul className="flex space-x-10">
-            <li><a href="#sobre" className={navLinkClass('sobre')}>Sobre</a></li>
-            <li><a href="#projetos" className={navLinkClass('projetos')}>Projetos</a></li>
-            <li><a href="#habilidades" className={navLinkClass('habilidades')}>Habilidades</a></li>
+        <button
+          onClick={() => setMenuOpen(o => !o)}
+          aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+          className={`
+            p-2 rounded-md text-3xl md:hidden focus:outline-none transition-colors
+            bg-transparent
+            ${scrolled ? 'text-white' : 'text-blue-900'}
+          `}
+         >
+           {menuOpen
+             ? <HiX className="drop-shadow-md" />
+             : <HiOutlineMenuAlt3 className="drop-shadow-md" />}
+         </button>
+
+        <nav className="hidden md:block">
+          <ul className="flex space-x-8 lg:space-x-10">
+            <li><a href="#sobre"        className={navLinkClass('sobre')}>Sobre</a></li>
+            <li><a href="#projetos"     className={navLinkClass('projetos')}>Projetos</a></li>
+            <li><a href="#habilidades"  className={navLinkClass('habilidades')}>Habilidades</a></li>
             <li><a href="#certificados" className={navLinkClass('certificados')}>Certificados</a></li>
-            <li><a href="#contato" className={navLinkClass('contato')}>Contato</a></li>
+            <li><a href="#contato"      className={navLinkClass('contato')}>Contato</a></li>
           </ul>
         </nav>
       </div>
+
+      {menuOpen && (
+        <div
+          onClick={() => setMenuOpen(false)}
+          className="fixed inset-0 z-40 bg-black/40 md:hidden"
+        />
+      )}
+
+      <nav
+        className={`
+          fixed top-0 right-0 h-full w-3/4 max-w-xs z-50 bg-blue-600 md:hidden
+          transform transition-transform duration-300 ease-in-out
+          ${menuOpen ? 'translate-x-0' : 'translate-x-full'}
+        `}
+      >
+        <div className="flex items-center justify-between px-6 py-4">
+          <span className="text-lg font-semibold text-white">Menu</span>
+
+          <button
+            onClick={() => setMenuOpen(false)}
+            aria-label="Close menu"
+            className="p-2 rounded-md text-3xl text-white focus:outline-none bg-transparent"
+          >
+            <HiX />
+          </button>
+        </div>
+
+        <ul className="mt-2 flex flex-col space-y-4 px-6">
+          <li><a onClick={() => setMenuOpen(false)} href="#sobre"        className={navLinkClass('sobre')}>Sobre</a></li>
+          <li><a onClick={() => setMenuOpen(false)} href="#projetos"     className={navLinkClass('projetos')}>Projetos</a></li>
+          <li><a onClick={() => setMenuOpen(false)} href="#habilidades"  className={navLinkClass('habilidades')}>Habilidades</a></li>
+          <li><a onClick={() => setMenuOpen(false)} href="#certificados" className={navLinkClass('certificados')}>Certificados</a></li>
+          <li><a onClick={() => setMenuOpen(false)} href="#contato"      className={navLinkClass('contato')}>Contato</a></li>
+        </ul>
+      </nav>
     </header>
   );
 };
