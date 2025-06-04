@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { TypeAnimation } from 'react-type-animation';
 import { motion } from 'framer-motion';
 import { FaEnvelope, FaGithub, FaInstagram, FaLinkedinIn, FaWhatsapp } from 'react-icons/fa';
 import contacts from '../../helpers/envs';
 
 const PersonalIntroduction: React.FC = () => {
+  const videoRef = useRef<HTMLVideoElement>(null);
   const [startTyping, setStartTyping] = useState(false);
   const [showCursor, setShowCursor] = useState(true);
   const [showContent, setShowContent] = useState(false);
@@ -16,22 +17,43 @@ const PersonalIntroduction: React.FC = () => {
     return () => clearTimeout(timer);
   }, []);
 
+  useEffect(() => {
+      const videoCurrent = videoRef.current;
+      if (!videoCurrent) return;
+
+      const tryPlay = async () => {
+        try {
+          await videoCurrent.play();
+        } catch {
+          const resume = () => {
+            videoCurrent.play().finally(() => document.removeEventListener('touchend', resume));
+          };
+          document.addEventListener('touchend', resume, { once: true });
+        }
+      };
+      tryPlay();
+  }, []);
+
   return (
     <section className="relative min-h-screen flex flex-col justify-center items-center overflow-hidden text-center px-6">
 
       <video
+        ref={videoRef}
         autoPlay
-        loop
         muted
         playsInline
+        loop
         preload="auto"
-        className="absolute top-0 left-0 w-full h-full object-cover object-top z-0"
+        onEnded={() => videoRef.current?.play()}
+        className="absolute top-0 left-0 w-full h-full object-cover object-top z-0
++                   pointer-events-none"
         aria-label="Vídeo de introdução com animações visuais"
-      >
-        <source src="/videos/portfolio-video.webm" type="video/webm" />
-        <source src="/videos/portfolio-video.mp4" type="video/mp4" />
-        Seu navegador não suporta vídeos.
-      </video>
+       >
+         <source src="/videos/portfolio-video.webm" type="video/webm" />
+
+         <source src="/videos/portfolio-video.mp4"  type="video/mp4"  />
+         Seu navegador não suporta vídeos.
+       </video>
 
       <div className="absolute top-0 left-0 w-full h-full bg-black/60 z-10" />
 
@@ -76,12 +98,14 @@ const PersonalIntroduction: React.FC = () => {
             Desenvolvedor de Software com foco em sistemas bem arquitetados, confiáveis e prontos para escalar.
           </p>
 
-          <a href="#projetos">
-            <button className="bg-blue-500 text-white px-6 py-3 mt-4 rounded shadow-lg hover:scale-[1.08]
-              text-sm md:text-base transition-all duration-200 ease-in-out bg-opacity-80">
-              Ver Projetos
-            </button>
-          </a>
+          <a
+           href="#projetos"
+           className="inline-block bg-blue-600/90 text-white px-6 py-3 mt-4 rounded-md
+                      shadow-lg hover:scale-105 active:scale-95 transition-transform
+                      duration-200 font-medium"
+          >
+           Ver Projetos
+         </a>
 
           <div className="mt-3 flex justify-center gap-4 text-white">
             <a href={contacts.linkedIn} title="LinkedIn" target="_blank" aria-label="Linkedin">

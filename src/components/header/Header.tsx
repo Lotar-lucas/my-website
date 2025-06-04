@@ -8,30 +8,33 @@ const Header: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => {
+  const onScroll = () => {
       setScrolled(window.scrollY > 20);
-      const ids = ['sobre', 'projetos', 'habilidades', 'certificados'];
-      const offset = 200;
+      const ids = ['sobre', 'projetos', 'habilidades', 'certificados', 'contato'];
+      const viewportMiddle = window.innerHeight / 2;
       let current = '';
 
       for (const id of ids) {
         const el = document.getElementById(id);
         if (!el) continue;
         const rect = el.getBoundingClientRect();
-        if (rect.top <= offset && rect.bottom > offset) {
+        if (rect.top <= viewportMiddle && rect.bottom > viewportMiddle) {
           current = id;
           break;
         }
       }
 
-      const bottom =
-        Math.abs(window.innerHeight + window.scrollY - document.body.scrollHeight) < 5;
-      setActiveSection(bottom ? 'contato' : current);
+      const bottomReached =
+        Math.abs(window.innerHeight + window.scrollY - document.body.scrollHeight) < 10; // 10 px de folga
+      if (bottomReached) current = 'contato';
+
+      setActiveSection(current);
     };
 
     addEventListener('scroll', onScroll);
     return () => removeEventListener('scroll', onScroll);
   }, []);
+
 
   useEffect(() => {
     const html = document.documentElement;
@@ -74,10 +77,16 @@ const Header: React.FC = () => {
         <button
           onClick={() => setMenuOpen(o => !o)}
           aria-label={menuOpen ? 'Close menu' : 'Open menu'}
-          className="text-3xl text-white md:hidden focus:outline-none"
-        >
-          {menuOpen ? <HiX /> : <HiOutlineMenuAlt3 />}
-        </button>
+          className={`
+            p-2 rounded-md text-3xl md:hidden focus:outline-none transition-colors
+            bg-transparent
+            ${scrolled ? 'text-white' : 'text-blue-900'}
+          `}
+         >
+           {menuOpen
+             ? <HiX className="drop-shadow-md" />
+             : <HiOutlineMenuAlt3 className="drop-shadow-md" />}
+         </button>
 
         <nav className="hidden md:block">
           <ul className="flex space-x-8 lg:space-x-10">
@@ -106,10 +115,11 @@ const Header: React.FC = () => {
       >
         <div className="flex items-center justify-between px-6 py-4">
           <span className="text-lg font-semibold text-white">Menu</span>
+
           <button
             onClick={() => setMenuOpen(false)}
             aria-label="Close menu"
-            className="text-3xl text-white focus:outline-none"
+            className="p-2 rounded-md text-3xl text-white focus:outline-none bg-transparent"
           >
             <HiX />
           </button>

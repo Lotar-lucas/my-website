@@ -157,30 +157,30 @@ const TechnicalSkillsAndDegree: React.FC = () => {
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
-              className={`px-4 py-2 rounded-full text-sm font-medium hover:scale-105 transition-all duration-200 ease-in-out
-                ${activeCategory === cat
-                  ? 'bg-white text-blue-950'
-                  : 'bg-blue-800 text-white hover:bg-blue-700'
-                }
-              `}
+              className={`appearance-none focus:outline-none px-4 py-2 rounded-full
+                         text-sm font-medium hover:scale-105 transition-all duration-200
+                         ${activeCategory === cat
+                           ? 'bg-white text-blue-900 ring-1 ring-blue-400'
+                           : 'bg-blue-800 text-white hover:bg-blue-700'
+                         }`}
             >
               {cat}
             </button>
           ))}
         </div>
 
-        <div className="relative min-h-[600px]">
-          <AnimatePresence mode="wait">
-            <motion.div
-              layout
-              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-4"
-            >
-              {filteredCategories.map((cat) => (
-                <SkillCard key={cat.id} icon={cat.icon} title={cat.id} skills={cat.skills} />
-              ))}
-            </motion.div>
-          </AnimatePresence>
-        </div>
+        <div className="relative md:min-h-[600px]">
+        <AnimatePresence mode="wait">
+          <motion.div
+            layout
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 auto-rows-auto gap-6 mb-4"
+          >
+            {filteredCategories.map((cat) => (
+              <SkillCard key={cat.id} icon={cat.icon} title={cat.id} skills={cat.skills} />
+            ))}
+          </motion.div>
+        </AnimatePresence>
+      </div>
       </div>
     </section>
   );
