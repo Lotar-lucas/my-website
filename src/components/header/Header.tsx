@@ -25,7 +25,7 @@ const Header: React.FC = () => {
       }
 
       const bottomReached =
-        Math.abs(window.innerHeight + window.scrollY - document.body.scrollHeight) < 10; // 10 px de folga
+        Math.abs(window.innerHeight + window.scrollY - document.body.scrollHeight) < 10;
       if (bottomReached) current = 'contato';
 
       setActiveSection(current);
