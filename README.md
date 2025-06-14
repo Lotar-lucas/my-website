@@ -7,7 +7,6 @@ Este é o repositório do meu portfólio profissional como Desenvolvedor de Soft
 ### 🔗 Acesse online
 
 📍 [lotar.dev.br](https://lotar.dev.br)
-☁️ Hospedado na AWS
 
 ---
 
@@ -17,7 +16,7 @@ Este é o repositório do meu portfólio profissional como Desenvolvedor de Soft
 * **[Tailwind CSS](https://tailwindcss.com/)** para estilização moderna e responsiva
 * **[Framer Motion](https://www.framer.com/motion/)** para animações suaves
 * **[React Icons](https://react-icons.github.io/react-icons/)** para uso de ícones
-* **Deploy** com AWS S3 + CloudFront (CI manual por enquanto)
+* **Hospedado** na AWS
 
 ---
 
