@@ -1,13 +1,13 @@
 ## 📘 Portfólio | Lucas Lotar
 
-Este é o repositório do meu portfólio profissional como Desenvolvedor de Software. O projeto foi desenvolvido com foco em performance, design moderno, organização e boas práticas de desenvolvimento frontend. Aqui apresento minhas habilidades, projetos, certificações e formas de contato de forma clara, responsiva e atrativa.
+Este é o repositório do meu portfólio profissional como Desenvolvedor de Software. O projeto foi desenvolvido com foco em performance, organização e boas práticas de desenvolvimento frontend. Aqui apresento minhas habilidades, projetos, certificações e formas de contato de forma clara, responsiva e atrativa.
 
 ---
 
 ### 🔗 Acesse online
 
 📍 [lotar.dev.br](https://lotar.dev.br)
-☁️ Hospedado na AWS (S3 + CloudFront)
+☁️ Hospedado na AWS
 
 ---
 
