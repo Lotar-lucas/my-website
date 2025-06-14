@@ -64,24 +64,12 @@ Acesse no navegador: `http://localhost:3000`
 src/
 ├── assets/              # Imagens e logos
 ├── components/          # Componentes reutilizáveis (Header, Footer, etc.)
-├── sections/            # Seções principais (Sobre, Projetos, etc.)
-├── data/                # Listas de projetos, habilidades, certificados
+├── helpers/             # Auxiliares
 ├── styles/              # Arquivos de estilos globais
-└── App.tsx              # Componente raiz
+├── App.tsx              # Componente raiz
+├── main.tsx             # Ponto de entrada da aplicação React
+└── index.css            # Arquivos de estilos globais
 ```
-
----
-
-### 📩 Contato
-
-Caso queira trocar uma ideia ou tenha interesse em alguma parceria:
-
-* ✉️ [Email](mailto:lucaslotar@email.com)
-* 💼 [LinkedIn](https://linkedin.com/in/lucaslotar)
-* 💻 [GitHub](https://github.com/Lotar-lucas)
-* 💬 [WhatsApp](https://wa.me/55seunumero)
-
----
 
 ### 📄 Licença
 
