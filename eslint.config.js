@@ -3,9 +3,13 @@ import globals from 'globals';
 import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
 import tseslint from 'typescript-eslint';
+import eslintPluginPrettier from 'eslint-plugin-prettier';
 
 export default tseslint.config(
   { ignores: ['dist', 'README.md', 'node_modules'] },
+  { plugins: {
+      prettier: eslintPluginPrettier, // 👈 plugin registrado aqui
+  }},
   {
     extends: [js.configs.recommended, ...tseslint.configs.recommended],
     files: ['**/*.{ts,tsx}'],
