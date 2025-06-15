@@ -24,7 +24,7 @@ const projects: Project[] = [
     Ideal para estudos de arquitetura com NestJS e integração com PostgreSQL.`,
     link: 'https://github.com/Lotar-lucas/api-fincheck',
     srcImage: projectImage1,
-    techs: ['React', 'TypeScript', 'TailwindCSS', 'Framer Motion', 'AOS', 'AWS'],
+    techs: ['Node.js', 'NestJS', 'TypeScript', 'Prisma', 'PostgreSQL'],
     status: 'Concluído',
   },
   {
