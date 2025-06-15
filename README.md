@@ -12,23 +12,23 @@ Este é o repositório do meu portfólio profissional como Desenvolvedor de Soft
 
 ### 🛠️ Tecnologias e Ferramentas
 
-* **[React](https://reactjs.org/)** + **[TypeScript](https://www.typescriptlang.org/)**
-* **[Tailwind CSS](https://tailwindcss.com/)** para estilização moderna e responsiva
-* **[Framer Motion](https://www.framer.com/motion/)** para animações suaves
-* **[React Icons](https://react-icons.github.io/react-icons/)** para uso de ícones
-* **Hospedado** na AWS
+- **[React](https://reactjs.org/)** + **[TypeScript](https://www.typescriptlang.org/)**
+- **[Tailwind CSS](https://tailwindcss.com/)** para estilização moderna e responsiva
+- **[Framer Motion](https://www.framer.com/motion/)** para animações suaves
+- **[React Icons](https://react-icons.github.io/react-icons/)** para uso de ícones
+- **Hospedado** na AWS
 
 ---
 
 ### 📌 Funcionalidades
 
-* ✅ Seção "Sobre mim" com detalhes técnicos e objetivos profissionais
-* ✅ Cards interativos de projetos com tecnologias, status e links
-* ✅ Filtro por categorias de habilidades técnicas
-* ✅ Certificados organizados visualmente
-* ✅ Animações com `Framer Motion` nas transições
-* ✅ Design 100% responsivo
-* ✅ Ícones sociais com links diretos (LinkedIn, GitHub, Email, WhatsApp)
+- ✅ Seção "Sobre mim" com detalhes técnicos e objetivos profissionais
+- ✅ Cards interativos de projetos com tecnologias, status e links
+- ✅ Filtro por categorias de habilidades técnicas
+- ✅ Certificados organizados visualmente
+- ✅ Animações com `Framer Motion` nas transições
+- ✅ Design 100% responsivo
+- ✅ Ícones sociais com links diretos (LinkedIn, GitHub, Email, WhatsApp)
 
 ---
 
