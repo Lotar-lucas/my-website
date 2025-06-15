@@ -1,6 +1,14 @@
 import React, { JSX } from 'react';
 import { FaReact, FaNodeJs, FaDocker, FaVuejs, FaAws } from 'react-icons/fa';
-import { SiMongodb, SiPostgresql, SiTailwindcss, SiTypescript, SiNestjs, SiPrisma, SiVuetify } from 'react-icons/si';
+import {
+  SiMongodb,
+  SiPostgresql,
+  SiTailwindcss,
+  SiTypescript,
+  SiNestjs,
+  SiPrisma,
+  SiVuetify,
+} from 'react-icons/si';
 import { TbBrandFramerMotion } from 'react-icons/tb';
 import projectImage1 from '../../assets/img-project-default.jpeg';
 import imgDefault from '../../assets/img-default.png';
@@ -34,7 +42,7 @@ const projects: Project[] = [
      com foco na personalização da experiência do usuário, engajamento e retenção de estudantes.\n
      Também contribui para a otimização da gestão acadêmica e melhoria da eficiência institucional.`,
     srcImage: imgDefault,
-    techs: ['Vue.js', 'Vuetify', 'Node.js', 'PostgreSQL', 'AWS' ],
+    techs: ['Vue.js', 'Vuetify', 'Node.js', 'PostgreSQL', 'AWS'],
     status: 'Projeto Corporativo',
   },
   {
@@ -50,34 +58,36 @@ const projects: Project[] = [
 ];
 
 const techIcons: Record<string, JSX.Element> = {
-  'React': <FaReact className="text-sky-500" title="React" />,
+  React: <FaReact className="text-sky-500" title="React" />,
   'Node.js': <FaNodeJs className="text-green-600" title="Node.js" />,
-  'MongoDB': <SiMongodb className="text-green-700" title="MongoDB" />,
-  'TailwindCSS': <SiTailwindcss className="text-cyan-500" title="TailwindCSS" />,
-  'TypeScript': <SiTypescript className="text-blue-600" title="TypeScript" />,
-  'PostgreSQL': <SiPostgresql className="text-blue-800" title="PostgreSQL" />,
-  'Docker': <FaDocker className="text-blue-400" title="Docker" />,
-  'NestJS': <SiNestjs className="text-red-600" title="NestJS" />,
-  'Prisma': <SiPrisma className="text-purple-600" title="Prisma" />,
+  MongoDB: <SiMongodb className="text-green-700" title="MongoDB" />,
+  TailwindCSS: <SiTailwindcss className="text-cyan-500" title="TailwindCSS" />,
+  TypeScript: <SiTypescript className="text-blue-600" title="TypeScript" />,
+  PostgreSQL: <SiPostgresql className="text-blue-800" title="PostgreSQL" />,
+  Docker: <FaDocker className="text-blue-400" title="Docker" />,
+  NestJS: <SiNestjs className="text-red-600" title="NestJS" />,
+  Prisma: <SiPrisma className="text-purple-600" title="Prisma" />,
   'Vue.js': <FaVuejs className="text-green-600" title="Vue.js" />,
-  'Vuetify': <SiVuetify className="text-purple-600 text-lg" title='Vuetify'/>,
-  'AWS': <FaAws className="text-orange-500 text-lg" title='AWS S3' />,
+  Vuetify: <SiVuetify className="text-purple-600 text-lg" title="Vuetify" />,
+  AWS: <FaAws className="text-orange-500 text-lg" title="AWS S3" />,
   'Framer Motion': <TbBrandFramerMotion className="text-pink-500 text-lg" title="Framer Motion" />,
 };
 
 const statusColorMap = {
-  'Concluído': 'bg-green-100 text-green-800',
+  Concluído: 'bg-green-100 text-green-800',
   'Em andamento': 'bg-yellow-100 text-yellow-800',
   'Open Source': 'bg-blue-100 text-blue-800',
   'Projeto Corporativo': 'bg-blue-100 text-blue-800',
-  'default': 'bg-gray-100 text-gray-800'
+  default: 'bg-gray-100 text-gray-800',
 };
 
 const Projects: React.FC = () => {
   return (
     <section id="projetos" className="bg-gradient-to-r from-blue-950 to-blue-500 py-24 px-4">
       <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-4xl font-bold text-blue-300 mb-4" data-aos="fade-up">Projetos</h2>
+        <h2 className="text-4xl font-bold text-blue-300 mb-4" data-aos="fade-up">
+          Projetos
+        </h2>
 
         <p className="text-lg text-blue-100 mb-12" data-aos="fade-up" data-aos-delay="100">
           Alguns dos projetos que desenvolvi aplicando boas práticas e tecnologias modernas.
@@ -90,7 +100,7 @@ const Projects: React.FC = () => {
               className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-2xl
                 hover:-translate-y-1 hover:scale-[1.02] transition-transform duration-300 ease-in-out flex flex-col h-full"
               data-aos="zoom-in"
-              data-aos-delay={index * 150} 
+              data-aos-delay={index * 150}
             >
               <img
                 src={project.srcImage}
@@ -105,13 +115,13 @@ const Projects: React.FC = () => {
                   {project.status}
                 </span>
 
-                <h3 className="text-2xl font-semibold text-blue-800">
-                  {project.title}
-                </h3>
+                <h3 className="text-2xl font-semibold text-blue-800">{project.title}</h3>
 
                 <p className="text-blue-800 text-justify leading-relaxed">
                   {project.description.split('\n').map((line, i) => (
-                      <p key={i} className="mb-2">{line.trim()}</p>
+                    <p key={i} className="mb-2">
+                      {line.trim()}
+                    </p>
                   ))}
                 </p>
 

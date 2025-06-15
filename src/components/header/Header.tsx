@@ -8,7 +8,7 @@ const Header: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-  const onScroll = () => {
+    const onScroll = (): void => {
       setScrolled(window.scrollY > 20);
       const ids = ['sobre', 'projetos', 'habilidades', 'certificados', 'contato'];
       const viewportMiddle = window.innerHeight / 2;
@@ -32,17 +32,18 @@ const Header: React.FC = () => {
     };
 
     addEventListener('scroll', onScroll);
-    return () => removeEventListener('scroll', onScroll);
+    return (): void => removeEventListener('scroll', onScroll);
   }, []);
-
 
   useEffect(() => {
     const html = document.documentElement;
     html.style.scrollBehavior = 'smooth';
-    return () => { html.style.scrollBehavior = 'auto'; };
+    return (): void => {
+      html.style.scrollBehavior = 'auto';
+    };
   }, []);
 
-  const navLinkClass = (id: string) => {
+  const navLinkClass = (id: string): string => {
     const base =
       'font-medium px-2 md:px-3 py-1 rounded-md transition-all duration-300 ease-in-out text-base md:text-lg';
     const on = activeSection === id;
@@ -75,26 +76,48 @@ const Header: React.FC = () => {
         </a>
 
         <button
-          onClick={() => setMenuOpen(o => !o)}
+          onClick={() => setMenuOpen((o) => !o)}
           aria-label={menuOpen ? 'Close menu' : 'Open menu'}
           className={`
             p-2 rounded-md text-3xl md:hidden focus:outline-none transition-colors
             bg-transparent
             ${scrolled ? 'text-white' : 'text-blue-900'}
           `}
-         >
-           {menuOpen
-             ? <HiX className="drop-shadow-md" />
-             : <HiOutlineMenuAlt3 className="drop-shadow-md" />}
-         </button>
+        >
+          {menuOpen ? (
+            <HiX className="drop-shadow-md" />
+          ) : (
+            <HiOutlineMenuAlt3 className="drop-shadow-md" />
+          )}
+        </button>
 
         <nav className="hidden md:block">
           <ul className="flex space-x-8 lg:space-x-10">
-            <li><a href="#sobre"        className={navLinkClass('sobre')}>Sobre</a></li>
-            <li><a href="#projetos"     className={navLinkClass('projetos')}>Projetos</a></li>
-            <li><a href="#habilidades"  className={navLinkClass('habilidades')}>Habilidades</a></li>
-            <li><a href="#certificados" className={navLinkClass('certificados')}>Certificados</a></li>
-            <li><a href="#contato"      className={navLinkClass('contato')}>Contato</a></li>
+            <li>
+              <a href="#sobre" className={navLinkClass('sobre')}>
+                Sobre
+              </a>
+            </li>
+            <li>
+              <a href="#projetos" className={navLinkClass('projetos')}>
+                Projetos
+              </a>
+            </li>
+            <li>
+              <a href="#habilidades" className={navLinkClass('habilidades')}>
+                Habilidades
+              </a>
+            </li>
+            <li>
+              <a href="#certificados" className={navLinkClass('certificados')}>
+                Certificados
+              </a>
+            </li>
+            <li>
+              <a href="#contato" className={navLinkClass('contato')}>
+                Contato
+              </a>
+            </li>
           </ul>
         </nav>
       </div>
@@ -126,11 +149,47 @@ const Header: React.FC = () => {
         </div>
 
         <ul className="mt-2 flex flex-col space-y-4 px-6">
-          <li><a onClick={() => setMenuOpen(false)} href="#sobre"        className={navLinkClass('sobre')}>Sobre</a></li>
-          <li><a onClick={() => setMenuOpen(false)} href="#projetos"     className={navLinkClass('projetos')}>Projetos</a></li>
-          <li><a onClick={() => setMenuOpen(false)} href="#habilidades"  className={navLinkClass('habilidades')}>Habilidades</a></li>
-          <li><a onClick={() => setMenuOpen(false)} href="#certificados" className={navLinkClass('certificados')}>Certificados</a></li>
-          <li><a onClick={() => setMenuOpen(false)} href="#contato"      className={navLinkClass('contato')}>Contato</a></li>
+          <li>
+            <a onClick={() => setMenuOpen(false)} href="#sobre" className={navLinkClass('sobre')}>
+              Sobre
+            </a>
+          </li>
+          <li>
+            <a
+              onClick={() => setMenuOpen(false)}
+              href="#projetos"
+              className={navLinkClass('projetos')}
+            >
+              Projetos
+            </a>
+          </li>
+          <li>
+            <a
+              onClick={() => setMenuOpen(false)}
+              href="#habilidades"
+              className={navLinkClass('habilidades')}
+            >
+              Habilidades
+            </a>
+          </li>
+          <li>
+            <a
+              onClick={() => setMenuOpen(false)}
+              href="#certificados"
+              className={navLinkClass('certificados')}
+            >
+              Certificados
+            </a>
+          </li>
+          <li>
+            <a
+              onClick={() => setMenuOpen(false)}
+              href="#contato"
+              className={navLinkClass('contato')}
+            >
+              Contato
+            </a>
+          </li>
         </ul>
       </nav>
     </header>

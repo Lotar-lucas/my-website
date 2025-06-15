@@ -22,7 +22,7 @@ const App: React.FC = () => {
   return (
     <div className="bg-white">
       <Header />
-      <main className='scroll-smooth'>
+      <main className="scroll-smooth">
         <PersonalIntroduction />
         <About />
         <Projects />
