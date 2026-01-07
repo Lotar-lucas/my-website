@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { TypeAnimation } from 'react-type-animation';
 import { motion } from 'framer-motion';
-import { FaEnvelope, FaGithub, FaInstagram, FaLinkedinIn, FaWhatsapp } from 'react-icons/fa';
+import { FaEnvelope, FaGithub, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
 import contacts from '../../helpers/envs';
 
 const PersonalIntroduction: React.FC = () => {
@@ -61,12 +61,12 @@ const PersonalIntroduction: React.FC = () => {
         transition={{ duration: 1, ease: 'easeOut' }}
         className="relative z-20"
       >
-        <h1 className="text-4xl sm:text-5xl md:text-6xl font-semibold text-white leading-tight italic tracking-tight drop-shadow-md">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-white leading-tight italic tracking-tight drop-shadow-md">
           {startTyping && (
             <>
               <TypeAnimation
                 sequence={[
-                  'Do código ao impacto',
+                  'Transformando ideias em software',
                   (): void => {
                     setShowCursor(false);
                     setShowContent(true);
@@ -91,8 +91,7 @@ const PersonalIntroduction: React.FC = () => {
           className="relative z-20 flex flex-col items-center text-center mt-6 gap-6"
         >
           <p className="text-white/90 text-lg max-w-xl">
-            Desenvolvedor de Software com foco em sistemas bem arquitetados, confiáveis e prontos
-            para escalar.
+            Alinhando software, negócio e impacto real.
           </p>
 
           <a
@@ -107,16 +106,6 @@ const PersonalIntroduction: React.FC = () => {
           <div className="mt-3 flex justify-center gap-4 text-white">
             <a href={contacts.linkedIn} title="LinkedIn" target="_blank" aria-label="Linkedin">
               <FaLinkedinIn className="w-6 h-6 hover:text-blue-300 hover:scale-110 transition-transform duration-200" />
-            </a>
-
-            <a
-              href={contacts.whatsapp}
-              target="_blank"
-              className="text-gray-100 hover:text-blue-300 transition-all"
-              title="WhatsApp"
-              aria-label="WhatsApp"
-            >
-              <FaWhatsapp className="w-6 h-6 hover:text-blue-300 hover:scale-110 transition-transform duration-200" />
             </a>
 
             <a href={contacts.github} title="GitHub" target="_blank" aria-label="Github">

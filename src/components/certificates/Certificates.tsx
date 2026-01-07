@@ -21,9 +21,12 @@ const degrees = [
 
 const Certificates: React.FC = () => {
   return (
-    <section id="certificados" className="bg-blue-200 pt-16 pb-16 px-4 sm:px-6">
+    <section
+      id="certificados"
+      className="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 pt-16 pb-16 px-4 sm:px-6"
+    >
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl font-extrabold text-blue-900 mb-8 text-center" data-aos="fade-up">
+        <h2 className="text-3xl font-extrabold text-cyan-400 mb-8 text-center" data-aos="fade-up">
           Certificados
         </h2>
 
@@ -34,19 +37,19 @@ const Certificates: React.FC = () => {
               href={degree.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-white rounded-xl shadow-md p-6 flex flex-col sm:flex-row items-start sm:items-center
+              className="bg-cyan-500 rounded-xl shadow-md p-6 flex flex-col sm:flex-row items-start sm:items-center
               gap-4 hover:shadow-lg hover:scale-[1.01] transition-all duration-200 group"
               data-aos="fade-up"
               data-aos-delay={i * 100}
             >
-              <FaGraduationCap className="text-blue-600 text-xl" />
+              <FaGraduationCap className="text-slate-900 text-xl" />
 
               <div>
-                <p className="text-base font-semibold text-blue-800 group-hover:underline">
+                <p className="text-base font-semibold text-white group-hover:underline">
                   {degree.title}
                 </p>
 
-                <p className="text-sm text-gray-600">{degree.issuer}</p>
+                <p className="text-sm text-gray-100">{degree.issuer}</p>
               </div>
             </a>
           ))}
