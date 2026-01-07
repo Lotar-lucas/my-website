@@ -49,11 +49,11 @@ const Header: React.FC = () => {
     const on = activeSection === id;
     const variant = scrolled
       ? on
-        ? 'text-white bg-blue-600/20 underline underline-offset-8 decoration-white decoration-2'
-        : 'text-white hover:text-blue-100 hover:bg-blue-600/10 hover:underline hover:underline-offset-8 hover:decoration-blue-100'
+        ? 'text-cyan-400 underline underline-offset-8 decoration-white decoration-2'
+        : 'text-cyan-400 hover:text-blue-100 hover:underline hover:underline-offset-8 hover:decoration-blue-100'
       : on
-        ? 'text-white underline underline-offset-8 decoration-blue-100 decoration-2'
-        : 'text-white hover:text-blue-200 hover:bg-blue-600/10 hover:underline hover:underline-offset-8 hover:decoration-blue-200';
+        ? 'text-cyan-400 underline underline-offset-8 decoration-blue-100 decoration-2'
+        : 'text-cyan-400 hover:text-blue-200 hover:underline hover:underline-offset-8 hover:decoration-blue-200';
 
     return `${base} ${variant}`;
   };
@@ -61,7 +61,7 @@ const Header: React.FC = () => {
   return (
     <header
       className={`fixed top-0 z-50 w-full transition-all duration-300 ${
-        scrolled ? 'bg-gradient-to-r from-blue-900 to-blue-500 shadow-md' : 'bg-transparent'
+        scrolled ? 'bg-gradient-to-r bg-slate-900 shadow-md' : 'bg-transparent'
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
@@ -72,7 +72,7 @@ const Header: React.FC = () => {
             <span className="text-2xl font-bold text-white">Lotar</span>
           </div>
 
-          <span className="text-sm tracking-wide text-blue-200">Desenvolvedor de Software</span>
+          <span className="text-sm tracking-wide text-cyan-400">Desenvolvedor de Software</span>
         </a>
 
         <button

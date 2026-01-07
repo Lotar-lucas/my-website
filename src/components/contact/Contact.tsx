@@ -1,23 +1,19 @@
 import React from 'react';
-import { FaEnvelope, FaLinkedinIn, FaGithub, FaInstagram, FaWhatsapp } from 'react-icons/fa';
+import { FaEnvelope, FaLinkedinIn, FaGithub, FaInstagram } from 'react-icons/fa';
 import contacts from '../../helpers/envs';
 
 const Contact: React.FC = () => {
   return (
     <>
-      <div className="h-16 bg-gradient-to-b from-blue-200 via-blue-250 to-blue-300" />
-
       <section
         id="contato"
-        className="bg-gradient-to-b from-blue-300 via-blue-600 to-blue-900 px-6 py-6 text-center"
+        className="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 px-6 py-6  text-center"
       >
-        <p className="text-lg leading-relaxed text-gray-100 mb-2 mt-8">Vamos Conectar?</p>
-
-        <div className="flex justify-center gap-10 items-center max-w-xs mx-auto">
+        <div className="flex justify-center gap-10 items-center mb-2 mt-8 max-w-xs mx-auto">
           <a
             href={contacts.linkedIn}
             target="_blank"
-            className="text-gray-100 hover:text-blue-300 transition-all"
+            className="text-cyan-400 hover:text-white transition-all"
             title="LinkedIn"
             aria-label="LinkedIn"
           >
@@ -25,19 +21,9 @@ const Contact: React.FC = () => {
           </a>
 
           <a
-            href={contacts.whatsapp}
-            target="_blank"
-            className="text-gray-100 hover:text-blue-300 transition-all"
-            title="WhatsApp"
-            aria-label="WhatsApp"
-          >
-            <FaWhatsapp className="w-6 h-6" />
-          </a>
-
-          <a
             href={contacts.github}
             target="_blank"
-            className="text-gray-100 hover:text-blue-300 transition-all"
+            className="text-cyan-400 hover:text-white transition-all"
             title="GitHub"
             aria-label="GitHub"
           >
@@ -47,7 +33,7 @@ const Contact: React.FC = () => {
           <a
             href={`mailto:${contacts.email}`}
             target="_blank"
-            className="text-gray-100 hover:text-blue-300 transition-all"
+            className="text-cyan-400 hover:text-white transition-all"
             title="Email"
             aria-label="Email"
           >
@@ -57,7 +43,7 @@ const Contact: React.FC = () => {
           <a
             href={contacts.instagram}
             target="_blank"
-            className="text-gray-100 hover:text-blue-300 transition-all"
+            className="text-cyan-400 hover:text-white transition-all"
             title="Instagram"
             aria-label="Instagram"
           >
@@ -65,7 +51,7 @@ const Contact: React.FC = () => {
           </a>
         </div>
 
-        <p className="text-sm leading-relaxed text-gray-100 mt-4">
+        <p className="text-sm leading-relaxed text-cyan-400 mt-4">
           © 2025 Lucas Lotar. Todos os direitos reservados.
         </p>
       </section>
