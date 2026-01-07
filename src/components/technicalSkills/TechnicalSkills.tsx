@@ -10,6 +10,7 @@ import {
   FaAws,
   FaJava,
   FaCloud,
+  FaVuejs,
 } from 'react-icons/fa';
 
 import {
@@ -23,10 +24,12 @@ import {
   SiAmazonsqs,
   SiSpringboot,
   SiSpring,
+  SiPagespeedinsights,
+  SiSpringsecurity,
 } from 'react-icons/si';
 
+import { RiReactjsLine, RiTailwindCssFill } from 'react-icons/ri';
 import { TbSql } from 'react-icons/tb';
-
 import { DiMysql } from 'react-icons/di';
 
 import { motion, AnimatePresence } from 'framer-motion';
@@ -43,20 +46,37 @@ const iconMap: Record<string, JSX.Element> = {
   'AWS SQS': <SiAmazonsqs className="text-orange-700 text-lg" title="AWS SQS" />,
   'AWS lambda': <SiAwslambda className="text-orange-700 text-lg" title="AWS lambda" />,
   Jest: <SiJest className="text-pink-600 text-lg" title="Jest" />,
-  Supertest: <FaVial className="text-teal-600 text-lg" title="Supertest" />,
   'Nest.js': <SiNestjs className="text-red-600 text-lg" title="Nest.js" />,
   SQL: <TbSql className="text-gray-800 text-lg" title="SQL" />,
   Java: <FaJava className="text-red-600 text-lg" title="Java" />,
   MySql: <DiMysql className="text-gray-900 text-lg" title="MySQL" />,
   'Spring Boot': <SiSpringboot className="text-green-700 text-lg" title="Spring Boot" />,
   'Spring Data JPA': <SiSpring className="text-green-700 text-lg" title="Spring Data JPA" />,
+  React: <RiReactjsLine className="text-sky-800 text-lg" title="React" />,
+  'Vue.js': <FaVuejs className="text-green-600 text-lg" title="Vue.js" />,
+  TailwindCSS: <RiTailwindCssFill className="text-sky-800  text-lg" title="TailwindCSS" />,
+  JUnit: <FaVial className="text-pink-600 text-lg" title="JUnit" />,
+  'Spring Framework': <SiSpring className="text-green-700 text-lg" title="Spring Framework" />,
+  'Spring Security': (
+    <SiSpringsecurity className="text-green-700 text-lg" title="Spring Security" />
+  ),
 };
 
 const skillCategories = [
   {
     id: 'Back-End',
     icon: <FaServer className="text-indigo-500 text-xl" />,
-    skills: ['Java', 'Spring Boot', 'Spring Data JPA', 'Node.js', 'TypeScript', 'Nest.js', 'JWT'],
+    skills: [
+      'Java',
+      'Spring Framework',
+      'Spring Boot',
+      'Spring Data JPA',
+      'Spring Security',
+      'Node.js',
+      'TypeScript',
+      'Nest.js',
+      'JWT',
+    ],
   },
   {
     id: 'Banco de Dados',
@@ -66,7 +86,7 @@ const skillCategories = [
   {
     id: 'Testes & Qualidade',
     icon: <FaVial className="text-pink-500 text-xl" />,
-    skills: ['Jest', 'Supertest'],
+    skills: ['Jest', 'JUnit'],
   },
   {
     id: 'DevOps & Cloud',
@@ -77,6 +97,11 @@ const skillCategories = [
     id: 'Ferramentas & Práticas',
     icon: <FaTools className="text-gray-700 text-xl" />,
     skills: ['Docker', 'Git', 'GitHub Actions'],
+  },
+  {
+    id: 'Front-End',
+    icon: <SiPagespeedinsights className="text-yellow-500 text-xl" />,
+    skills: ['React', 'Vue.js', 'TailwindCSS'],
   },
 ];
 

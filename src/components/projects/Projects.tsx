@@ -1,5 +1,5 @@
 import React, { JSX } from 'react';
-import { FaReact, FaNodeJs, FaDocker, FaVuejs, FaAws } from 'react-icons/fa';
+import { FaReact, FaNodeJs, FaDocker, FaVuejs, FaAws, FaJava } from 'react-icons/fa';
 import {
   SiMongodb,
   SiPostgresql,
@@ -8,11 +8,17 @@ import {
   SiNestjs,
   SiPrisma,
   SiVuetify,
+  SiSpring,
+  SiSpringsecurity,
+  SiHibernate,
 } from 'react-icons/si';
-import { TbBrandFramerMotion } from 'react-icons/tb';
+import { HiShieldCheck } from 'react-icons/hi';
+
+import { TbBrandFramerMotion, TbBrandOauth } from 'react-icons/tb';
 import projectImage1 from '../../assets/img-project-default.jpeg';
 import imgDefault from '../../assets/img-default.png';
 import imgProjectCard from '../../assets/project-card.png';
+import imgProjectDSCommerce from '../../assets/img-DSCommerce.jpg';
 
 interface Project {
   title: string;
@@ -20,10 +26,29 @@ interface Project {
   link?: string;
   srcImage?: string;
   techs: string[];
-  status: 'Concluído' | 'Em andamento' | 'Open Source' | 'Projeto Corporativo';
+  status: 'Concluído' | 'Em andamento' | 'Open Source' | 'Projeto Corporativo' | 'Em evolução';
 }
 
 const projects: Project[] = [
+  {
+    title: 'DSCommerce',
+    description: `DSCommerce é uma aplicação back-end de e-commerce desenvolvida com Spring Boot 3, implementando as melhores práticas de desenvolvimento backend com Java.\n
+     O projeto segue uma arquitetura em camadas bem definida, com foco em segurança, performance e escalabilidade.`,
+    srcImage: imgProjectDSCommerce,
+    link: 'https://github.com/Lotar-lucas/dscommerce',
+    techs: [
+      'Java',
+      'Spring Framework',
+      'Spring Data JPA',
+      'Spring Security',
+      'Spring Validation',
+      'Hibernate',
+      'PostgreSQL',
+      'OAuth2',
+      'JWT',
+    ],
+    status: 'Em evolução',
+  },
   {
     title: 'API Fincheck',
     description: `API de gerenciamento de finanças pessoais desenvolvida com foco em aprendizado e boas práticas usando NestJS, Prisma ORM e TypeScript.\n
@@ -53,7 +78,7 @@ const projects: Project[] = [
     srcImage: imgProjectCard,
     link: 'https://github.com/Lotar-lucas/portfolio',
     techs: ['React', 'TypeScript', 'TailwindCSS', 'Framer Motion', 'AWS'],
-    status: 'Em andamento',
+    status: 'Concluído',
   },
 ];
 
@@ -71,13 +96,21 @@ const techIcons: Record<string, JSX.Element> = {
   Vuetify: <SiVuetify className="text-purple-600 text-lg" title="Vuetify" />,
   AWS: <FaAws className="text-orange-500 text-lg" title="AWS S3" />,
   'Framer Motion': <TbBrandFramerMotion className="text-pink-500 text-lg" title="Framer Motion" />,
+  Java: <FaJava className="text-red-600" title="Java" />,
+  'Spring Framework': <SiSpring className="text-green-600" title="Spring Framework" />,
+  'Spring Security': <SiSpringsecurity className="text-green-700" title="Spring Security" />,
+  'Spring Data JPA': <SiSpring className="text-green-600" title="Spring Data JPA" />,
+  'Spring Validation': <SiSpring className="text-green-600" title="Spring Validation" />,
+  Hibernate: <SiHibernate className="text-[#BEB17D]" title="Hibernate" />,
+  JWT: <HiShieldCheck className="text-yellow-500 text-lg" title="JSON Web Token" />,
+  OAuth2: <TbBrandOauth className="text-blue-500 text-lg" title="OAuth2" />,
 };
-
 const statusColorMap = {
   Concluído: 'bg-green-100 text-green-800',
   'Em andamento': 'bg-yellow-100 text-yellow-800',
   'Open Source': 'bg-blue-100 text-blue-800',
   'Projeto Corporativo': 'bg-blue-100 text-blue-800',
+  'Em evolução': 'bg-purple-100 text-purple-800',
   default: 'bg-gray-100 text-gray-800',
 };
 
