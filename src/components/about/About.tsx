@@ -1,5 +1,5 @@
 import React from 'react';
-import photo from '../../assets/me-5.png';
+import photo from '/me-5.png';
 import { FaWhatsapp } from 'react-icons/fa';
 import contacts from '../../helpers/envs';
 

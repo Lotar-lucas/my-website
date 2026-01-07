@@ -15,10 +15,10 @@ import {
 import { HiShieldCheck } from 'react-icons/hi';
 
 import { TbBrandFramerMotion, TbBrandOauth } from 'react-icons/tb';
-import projectImage1 from '../../assets/img-project-default.jpeg';
-import imgDefault from '../../assets/img-default.png';
-import imgProjectCard from '../../assets/project-card.png';
-import imgProjectDSCommerce from '../../assets/img-DSCommerce.jpg';
+import projectImage1 from '/img-project-default.jpeg';
+import imgDefault from '/img-default.png';
+import imgProjectCard from '/project-card.png';
+import imgProjectDSCommerce from '/img-DSCommerce.jpg';
 
 interface Project {
   title: string;

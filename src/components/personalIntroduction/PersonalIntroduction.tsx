@@ -48,8 +48,8 @@ const PersonalIntroduction: React.FC = () => {
 +                   pointer-events-none"
         aria-label="Vídeo de introdução com animações visuais"
       >
-        <source src="/videos/portfolio-video.webm" type="video/webm" />
-        <source src="/videos/portfolio-video.mp4" type="video/mp4" />
+        <source src="/portfolio-video.webm" type="video/webm" />
+        <source src="/portfolio-video.mp4" type="video/mp4" />
         Seu navegador não suporta vídeos.
       </video>
 
