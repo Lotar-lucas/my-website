@@ -14,11 +14,11 @@ const About: React.FC = () => {
           <h1 className="text-3xl md:text-4xl text-cyan-400 font-extrabold mb-6">Sobre</h1>
 
           <p className="text-lg leading-relaxed text-cyan-400 mb-6">
-            Sou Desenvolvedor Back-End com formação em Engenharia de Software e experiência na
-            construção de APIs, microsserviços e sistemas que precisam lidar bem com escala. No meu
-            dia a dia, gosto de estruturar soluções de forma clara, estável e fácil de manter,
-            sempre busco decisões técnicas que façam sentido no longo prazo e que se alinhem à
-            realidade do negócio.
+            Sou Desenvolvedor Back-End com formação em Analise e Desenvolvimento de Sistemas e
+            Engenharia de Software com experiência na construção de APIs, microsserviços e sistemas
+            que precisam lidar bem com escala. No meu dia a dia, gosto de estruturar soluções de
+            forma clara, estável e fácil de manter, sempre busco decisões técnicas que façam sentido
+            no longo prazo e que se alinhem à realidade do negócio.
           </p>
 
           <p className="text-lg leading-relaxed text-cyan-400 mb-6">
